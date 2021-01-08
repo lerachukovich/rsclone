@@ -1,0 +1,40 @@
+{
+  "name": "rsclone",
+  "version": "1.0.0",
+  "description": "RS Clone Project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack serve --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lerachukovich/rsclone.git"
+  },
+  "keywords": [
+    "js",
+    "javascript",
+    "webpack"
+  ],
+  "author": "Lera Chukovich <lera.chukovich@gmail.com>, Olga Fedorovich <fedola@mail.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lerachukovich/rsclone/issues"
+  },
+  "homepage": "https://github.com/lerachukovich/rsclone#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^7.0.0",
+    "css-loader": "^5.0.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^4.5.1",
+    "less": "^4.0.0",
+    "less-loader": "^7.2.1",
+    "mini-css-extract-plugin": "^1.3.3",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.12.0",
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-server": "^3.11.1"
+  }
+}
