@@ -17,7 +17,7 @@
     "javascript",
     "webpack"
   ],
-  "author": "Lera Chukovich <lera.chukovich@gmail.com>, Olga Fedorovich <fedola@mail.ru>",
+  "author": "Lera Chukovich <lera.chukovich@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/lerachukovich/rsclone/issues"
