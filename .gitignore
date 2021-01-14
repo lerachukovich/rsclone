@@ -218,6 +218,6 @@ dist
 .pnp.*
 
 #idea
-.idea
+.idea/
 
 
