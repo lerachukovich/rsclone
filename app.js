@@ -47,6 +47,8 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use(express.static(__dirname + '/public'));
+
 //Routes
 app.use('/', require('./routes/index.js'));
 app.use('/users', require('./routes/users.js'));
