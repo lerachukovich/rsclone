@@ -9,6 +9,7 @@ const Reservation = require('../models/Reservation.js');
 //Welcome page
 router.get('/', (req, res) => res.render('welcome'));
 
+//Router for js static
 router.get('/public/javascript/*', (req, res) => {
     res.sendFile( localPath.localPath + req.path)
     console.log(req.path);
@@ -18,7 +19,7 @@ router.get('/reservation', (req, res) => res.render('partials/reservation'));
 
 
 // Reservation form handler
-router.post('/reservation', (req, res) => {
+router.post('/reservation', ensureAuthenticated, (req, res) => {
     const { guestAmount, reservationDate, reservationTime, restaurantId } = req.body;
     let errors = [];
 
@@ -69,7 +70,7 @@ router.post('/reservation', (req, res) => {
 })
 
 //Dashboard
-router.get('/dashboard', ensureAuthenticated, (req, res) =>
+router.get('/dashboard', (req, res) =>
     res.render('dashboard', {
         name: req.user.name
     }));
