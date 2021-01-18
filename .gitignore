@@ -220,4 +220,6 @@ dist
 #idea
 .idea/
 
+#env
+env.json
 
