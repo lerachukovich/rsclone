@@ -70,7 +70,7 @@ router.post('/reservation', ensureAuthenticated, (req, res) => {
 })
 
 //Dashboard
-router.get('/dashboard', (req, res) =>
+router.get('/dashboard', ensureAuthenticated, (req, res) =>
     res.render('dashboard', {
         name: req.user.name
     }));
