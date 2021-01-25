@@ -1,0 +1,61 @@
+/*HEADER*/
+.app_header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 2px solid black;
+    background: white;
+    position: fixed;
+    top: 0;
+}
+.header_left-part {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header_logo {
+    width: 70px;
+    height: 70px;
+    background: url(../assets/images/logo.png) no-repeat center center / 80%, white;
+    box-shadow: 0px 0px 5px black;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+.header_name {
+    font-size: 30px;
+    /*font-family: 'Fredoka One', cursive;*/
+    font-family: 'Vesper Libre', sans-serif;
+    color: #571010;
+}
+.lang_wrapper {
+    display: flex;
+    /*justify-content: space-between;*/
+    align-items: center;
+    box-shadow: 0px 0px 5px black;
+    border-radius: 10px;
+    margin-right: 10px;
+    overflow: hidden;
+}
+
+.lang_active.en-lang {
+    background: url(../assets/images/en.png) no-repeat center center / 80%, #571010;
+}
+.lang_active.ru-lang {
+    background: url(../assets/images/ru.png) no-repeat center center / 80%, #571010;
+}
+.en-lang {
+    width: 70px;
+    height: 50px;
+    background: url(../assets/images/en.png) no-repeat center center / 80%;
+    border-right: 1px solid #2e2d2d;
+    cursor: pointer;
+}
+.ru-lang {
+    width: 70px;
+    height: 50px;
+    background: url(../assets/images/ru.png) no-repeat center center / 80%;
+    border-left: 1px solid #252525;
+    cursor: pointer;
+}
