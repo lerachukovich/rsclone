@@ -1,4 +1,6 @@
+
 class Header {
+
     renderHeader() {
         const appHeader = document.createElement('header');
         appHeader.classList.add('app_header');
@@ -15,12 +17,7 @@ class Header {
         appHeader.appendChild(headerRightPart);
         return appHeader;
     }
+
 }
-
-const header =  new Header().renderHeader();
-
-window.addEventListener('load', () => {
-    document.body.appendChild(header);
-});
 
 export default Header;

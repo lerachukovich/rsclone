@@ -18,19 +18,23 @@ class LanguageSwitcher {
 
         textNodes.forEach(item => {
             const wordKey = item.dataset.key;
+            if(item.localName === 'input') {
+                item.setAttribute('placeholder', `${dictionary[langCode][wordKey]}`);
+            } 
             item.innerHTML = dictionary[langCode][wordKey];
         });
 
     }
 
-    renderLanguageSwitcher() {
-        const languageSwitcher = document.createElement('div');
-        languageSwitcher.classList.add('lang_wrapper');
+    initLanguageSwitcher() {
+        const languageSwitcher = document.querySelector('.lang_wrapper');
+        // const languageSwitcher = document.createElement('div');
+        // languageSwitcher.classList.add('lang_wrapper');
 
-        languageSwitcher.innerHTML = `
-        <div class="en-lang lang_active" data-lang="en"></div>
-        <div class="ru-lang" data-lang="ru"></div>
-        `;
+        // languageSwitcher.innerHTML = `
+        // <div class="en-lang lang_active" data-lang="en"></div>
+        // <div class="ru-lang" data-lang="ru"></div>
+        //`;
 
         languageSwitcher.addEventListener('click', this.changeLanguage);
 
@@ -42,3 +46,4 @@ class LanguageSwitcher {
 }
 
 export default LanguageSwitcher;
+

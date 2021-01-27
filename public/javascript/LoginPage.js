@@ -1,6 +1,6 @@
 import { dictionary } from './dictionary.js';
 import LanguageSwitcher from "./LanguageSwitcher.js";
-import Header from "./Header.js";
+//import Header from "./Header.js";
 
 class LoginPage {
     constructor() {
@@ -30,13 +30,15 @@ class LoginPage {
     }
 }
 
-const languageSwitcher = new LanguageSwitcher().renderLanguageSwitcher();
 const login =  new LoginPage().renderLoginPage();
 
 window.addEventListener('load', () => {
-    document.body.appendChild(login);
-    document.body.appendChild(languageSwitcher);
+    document.querySelector('.app_main').appendChild(login);
+    const languageSwitcher = new LanguageSwitcher();
+    languageSwitcher.initLanguageSwitcher();
 });
+
+//export default LoginPage;
 
 
 

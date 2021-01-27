@@ -48,10 +48,13 @@ class WelcomePage {
     }
 }
 
-const languageSwitcher = new LanguageSwitcher().renderLanguageSwitcher();
+//const languageSwitcher = new LanguageSwitcher().renderLanguageSwitcher();
 const welcome =  new WelcomePage().renderWelcomePage();
 
 window.addEventListener('load', () => {
-    document.body.appendChild(welcome);
-    document.body.appendChild(languageSwitcher);
+    document.querySelector('.app_main').appendChild(welcome);
+    const languageSwitcher = new LanguageSwitcher();
+    languageSwitcher.initLanguageSwitcher();
 });
+
+export default WelcomePage;
