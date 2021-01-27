@@ -70,9 +70,19 @@ router.post('/reservation', ensureAuthenticated, (req, res) => {
 })
 
 //Dashboard
-router.get('/dashboard', ensureAuthenticated, (req, res) =>
+router.get('/dashboard', ensureAuthenticated, (req, res) => {
+        // Reservation.find({ email: req.user.email })
+        //     .then(reservation => {
+        //         if (reservation) {
+        //
+        //         } else {
+        //
+        //         }
+        //     })
     res.render('dashboard', {
-        name: req.user.name
-    }));
+            name: req.user.name
+        })
+    }
+);
 
 module.exports = router;
