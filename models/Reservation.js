@@ -2,15 +2,7 @@ const mongoose = require('mongoose');
 const currentDate = Date.now();
 
 const ReservationSchema = new mongoose.Schema({
-    userId: {
-        type: Number,
-        required: true
-    },
     restaurantId: {
-        type: Number,
-        required: true
-    },
-    reservationId: {
         type: Number,
         required: true
     },
@@ -30,6 +22,9 @@ const ReservationSchema = new mongoose.Schema({
     timeStamp: {
         type: String,
         default: currentDate.getTime,
+    },
+    email: {
+        type: String
     }
 });
 

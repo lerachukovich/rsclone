@@ -21,10 +21,11 @@ router.get('/reservation', (req, res) => res.render('partials/reservation'));
 // Reservation form handler
 router.post('/reservation', ensureAuthenticated, (req, res) => {
     const { guestAmount, reservationDate, reservationTime, restaurantId } = req.body;
+    const email = req.user.email;
     let errors = [];
 
     //    Check required fields
-    if (!guestAmount || !reservationDate || !reservationTime) {
+    if (!guestAmount || !reservationDate || !reservationTime || !email) {
         errors.push({ msg: 'Please fill in all fields' });
     }
 
@@ -51,8 +52,7 @@ router.post('/reservation', ensureAuthenticated, (req, res) => {
                     });
                 } else {
                     const newReservation = new Reservation({
-                        reservationId: 17,
-                        userId: 1,
+                        email: email,
                         restaurantId,
                         guestAmount,
                         reservationDate,
@@ -70,10 +70,27 @@ router.post('/reservation', ensureAuthenticated, (req, res) => {
 })
 
 //Dashboard
-router.get('/dashboard', ensureAuthenticated, (req, res) =>
-    res.render('dashboard', {
-        name: req.user.name,
-        email: req.user.email
-    }));
+router.get('/dashboard', ensureAuthenticated, (req, res) => {
+    let errors = [];
+    let reservations = [];
+        Reservation.find({ email: req.user.email })
+            .then(reservation => {
+                if (reservation) {
+                reservation.forEach(elem => {
+                    reservations.push(elem);
+                })
+                } else {
+                    req.flash('error_msg', 'You do not have any reservations yet');
+                }
+            }).then( elem => {
+            res.render('dashboard', {
+                name: req.user.name,
+                email: req.user.email
+                reservations: reservations,
+                errors : errors
+            })}
+        )
+    }
+);
 
 module.exports = router;
