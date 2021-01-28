@@ -1,0 +1,59 @@
+.menu_layout {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(206, 187, 187, 0.9);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu_wrapper {
+  padding: 10px;
+  width: 60%;
+  height: 100%;
+  background: url(../assets/images/menu-bg3.jpg) repeat center center / cover;
+  overflow-y: scroll;
+  color: white;
+}
+.menu_title {
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: 700;
+  color: #802121;
+}
+.menu_section {
+  background: rgba(20, 20, 20, 0.7);
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.menu_section_title {
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.menu_section_item_wrapper {
+  padding: 10px 5px;
+}
+.menu_section_item_wrapper:not(:last-child) {
+  border-bottom: 1px solid white;
+}
+.menu_section_item_wrapper div:not(:last-child) {
+  margin-bottom: 5px;
+}
+.menu_section_item-name {
+  font-weight: 700;
+  color: #a02a2a;
+}
+.menu_section_item-description {
+  font-style: 14px;
+  font-weight: 300;
+}
+.menu_section_item-price {
+  font-size: 18px;
+  font-weight: 700;
+}

@@ -72,7 +72,8 @@ router.post('/reservation', ensureAuthenticated, (req, res) => {
 //Dashboard
 router.get('/dashboard', ensureAuthenticated, (req, res) =>
     res.render('dashboard', {
-        name: req.user.name
+        name: req.user.name,
+        email: req.user.email
     }));
 
 module.exports = router;

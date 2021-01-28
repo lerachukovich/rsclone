@@ -1,0 +1,167 @@
+.restaurant-page {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 150px 100px 20px 100px;
+  position: relative;
+  background: url(../assets/restaurants-images/1.jpg) no-repeat right 0px top -500px / contain;
+}
+.restaurant-page_title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #491414;
+}
+.restaurant-page_info {
+  width: 50%;
+  box-shadow: 0px 0px 10px black;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 10px;
+  position: relative;
+}
+.restaurant-page_info div {
+  margin-bottom: 10px;
+}
+.restaurant-page_booking {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.restaurant-page_booking > div {
+  background: white;
+  padding: 10px;
+  margin-top: 20px;
+  box-shadow: 0px 0px 10px black;
+}
+.restaurant-page_booking_form_wrapper {
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+.restaurant-page_booking_call_button {
+  width: fit-content;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  background: #4d0b0b;
+  transition: all 0.5s;
+}
+.restaurant-page_booking_call_button a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  font-weight: 700;
+  color: white;
+}
+.restaurant-page_booking_call_button:hover {
+  background: url(../assets/images/phone.png) no-repeat right 10px center / 40px, #e7d6d6;
+  color: black;
+  padding-right: 60px;
+}
+.restaurant-page_booking_call_button:hover a {
+  color: black;
+}
+.restaurant-page_nav {
+  margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(233, 212, 212, 0.5);
+}
+.restaurant-page_nav-list {
+  list-style-type: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+}
+.restaurant-page_nav-list li a {
+  padding: 10px;
+  text-decoration: none;
+  position: relative;
+  color: #300d0d;
+  font-weight: 700;
+}
+.restaurant-page_nav-list li a:hover::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-bottom: 2px solid #470f0f;
+}
+.restaurant-page_photos_wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.restaurant-page_photos_wrapper_image {
+  width: 30%;
+  height: 200px;
+}
+.restaurant-page_photos_wrapper_image:first-child {
+  background: url(../assets/restaurants-images/2.jpg) no-repeat center center / cover;
+}
+.restaurant-page_photos_wrapper_image:nth-child(2) {
+  background: url(../assets/restaurants-images/3.jpg) no-repeat center center / cover;
+}
+.restaurant-page_photos_wrapper_image:last-child {
+  background: url(../assets/restaurants-images/4.jpg) no-repeat center center / cover;
+}
+.restaurant-page_overview_item {
+  padding: 0px 0px 0px 60px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.restaurant-page_overview_item div:first-child {
+  margin-bottom: 5px;
+  font-weight: 700;
+  font-size: 16px;
+}
+.restaurant-page_overview_name {
+  font-size: 35px;
+  font-weight: 900;
+}
+.restaurant-page_overview_address {
+  background: url(../assets/images/address.png) no-repeat left 10px center / 40px;
+}
+.restaurant-page_overview_phone {
+  background: url(../assets/images/phone.png) no-repeat left 10px center / 40px;
+}
+.restaurant-page_overview_hours {
+  background: url(../assets/images/hours.png) no-repeat left 10px center / 40px;
+}
+.restaurant-page_overview_price {
+  background: url(../assets/images/price.png) no-repeat left 10px center / 40px;
+}
+.restaurant-page_overview_website {
+  background: url(../assets/images/website.png) no-repeat left 10px center / 40px;
+}
+.restaurant-page_overview_cuisines {
+  background: url(../assets/images/cuisines.png) no-repeat left 10px center / 40px;
+}
+.restaurant-page_menu_button {
+  width: fit-content;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 5px;
+  background: #4d0b0b;
+  color: white;
+  transition: all 0.5s;
+}
+.restaurant-page_menu_button:hover {
+  background: url(../assets/images/check-menu.png) no-repeat right 10px center / 40px, #e7d6d6;
+  color: black;
+  padding-right: 60px;
+}

@@ -1,0 +1,32 @@
+.login_page_right-side {
+  background: url(../assets/images/first-page-bg2.jpg) no-repeat center center / cover;
+}
+.login-form {
+  width: fit-content;
+  margin: 0 auto;
+}
+.login-form_header {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.login-form_label {
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+.login-form_input {
+  display: block;
+  margin-bottom: 5px;
+  width: 250px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+.login-form_button {
+  margin: 20px 0 0 0;
+}
+p.login-register {
+  width: fit-content;
+  margin-top: 10px;
+}

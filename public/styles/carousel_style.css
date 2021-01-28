@@ -1,0 +1,125 @@
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.carousel_title {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  width: fit-content;
+  padding: 0px 100px 10px 0px;
+  border-bottom: 2px solid black;
+}
+.carousel_nav {
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+}
+.carousel_nav-prev,
+.carousel_nav-next {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.carousel_nav-prev.disabled,
+.carousel_nav-next.disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+.carousel_nav-prev {
+  background: url(../assets/images/arrow-left.png) no-repeat center center / contain;
+}
+.carousel_nav-next {
+  background: url(../assets/images/arrow-right.png) no-repeat center center / contain;
+}
+.carousel_container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px 5px;
+}
+.carousel_wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: all 1s;
+}
+.cuisine_card_wrapper {
+  border-radius: 5px;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin-right: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.cuisine_card_wrapper:hover {
+  box-shadow: 0px 0px 10px black;
+  transform: scale(1.05);
+}
+.cuisine_card_wrapper:hover .cuisine_card_layout {
+  background: rgba(90, 84, 84, 0.4);
+}
+.cuisine_card_title {
+  color: white;
+  text-shadow: #581111 0px 0px 5px;
+  font-weight: 700;
+  font-size: 22px;
+}
+.cuisine_card_layout {
+  background: rgba(90, 84, 84, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  text-align: center;
+}
+.cuisine_card_burgers {
+  background: url(../assets/cuisines-images/burgers.jpg) no-repeat center center / contain;
+}
+.cuisine_card_pizza {
+  background: url(../assets/cuisines-images/pizza.jpg) no-repeat center center / contain;
+}
+.cuisine_card_russian {
+  background: url(../assets/cuisines-images/russian.jpg) no-repeat center center / contain;
+}
+.cuisine_card_salads {
+  background: url(../assets/cuisines-images/salads.jpg) no-repeat center center / contain;
+}
+.cuisine_card_asian {
+  background: url(../assets/cuisines-images/asian.jpg) no-repeat center center / contain;
+}
+.cuisine_card_desserts {
+  background: url(../assets/cuisines-images/desserts.jpg) no-repeat center center / contain;
+}
+.cuisine_card_indian {
+  background: url(../assets/cuisines-images/indian.jpg) no-repeat center center / contain;
+}
+.cuisine_card_breakfast {
+  background: url(../assets/cuisines-images/breakfast.jpg) no-repeat center center / contain;
+}
+.cuisine_card_steak {
+  background: url(../assets/cuisines-images/steak.jpg) no-repeat center center / contain;
+}
+.cuisine_card_italian {
+  background: url(../assets/cuisines-images/italian.jpg) no-repeat center center / contain;
+}
+.cuisine_card_mediterranean {
+  background: url(../assets/cuisines-images/mediterranean.jpg) no-repeat center center / contain;
+}
+.cuisine_card_sushi {
+  background: url(../assets/cuisines-images/sushi.jpg) no-repeat center center / contain;
+}
+.cuisine_card_healthy {
+  background: url(../assets/cuisines-images/healthy.jpg) no-repeat center center / contain;
+}
