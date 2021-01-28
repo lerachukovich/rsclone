@@ -42,7 +42,7 @@ class Main {
 
         const randomPage = getRandomPage(1, 20);
         
-        const url = `https://api.documenu.com/v2/restaurants/search/fields?fullmenu=true&key=9509fd93681327cefe078c26c8fb0ca2&page=${randomPage}`;
+        const url = `https://api.documenu.com/v2/restaurants/search/fields?fullmenu=true&key=ceac53a25a3e0c72db4a54003c38c2b7&page=${randomPage}`;
 
         // const newRestCarousel = new RestaurantsCarousel(url, this.appMain);
         // newRestCarousel.getRestaurantsDataForDefaultCarousel();
