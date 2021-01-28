@@ -1,0 +1,74 @@
+.app_header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    // border-bottom: 2px solid black;
+    background: white;
+    height: 10%;
+}
+
+.header_left-part,
+.header_right-part {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_right-part {
+    width: 50%;
+}
+
+.header_logo {
+    width: 50px;
+    height: 50px;
+    background: url(./../assets/images/logo.png) no-repeat center center/80%, white;
+    box-shadow: 0px 0px 5px black;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.header_name {
+    font-size: 25px;
+    font-family: 'Fredoka One', cursive;
+    color: rgb(87, 16, 16);
+}
+
+.lang_wrapper {
+    position: relative;
+    z-index: 1;
+    margin-left: auto;
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 0px 5px black;
+    border-radius: 10px;
+    margin-right: 10px;
+    overflow: hidden;
+}
+
+.lang_active.en-lang {
+    background: url(./../assets/images/en.png) no-repeat center center/ 80%, rgb(87, 16, 16);
+}
+
+.lang_active.ru-lang {
+    background: url(./../assets/images/ru.png) no-repeat center center/80%, rgb(87, 16, 16);
+}
+
+.en-lang {
+    width: 60px;
+    height: 40px;
+    background: url(./../assets/images/en.png) no-repeat center center/ 80%;
+    border-right: 1px solid rgb(46, 45, 45);
+    cursor: pointer;
+}
+
+.ru-lang {
+    width: 60px;
+    height: 40px;
+    background: url(./../assets/images/ru.png) no-repeat center center/80%;
+    border-left: 1px solid rgb(37, 37, 37);
+    cursor: pointer;
+}

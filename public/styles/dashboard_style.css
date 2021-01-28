@@ -1,0 +1,84 @@
+.dashboard-page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 0;
+}
+
+.dashboard-block {
+    width: 50%;
+    height: 50%;
+    border: 1px solid black;
+    cursor: pointer;
+
+}
+
+.dashboard-block:hover .dashboard-block_layout {
+    background: rgba(245, 238, 238, 0.4);
+}
+
+.dashboard-block_layout {
+    width: 100%;
+    height: 100%;
+    background: rgba(245, 238, 238, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.5s;
+}
+
+.dashboard-central-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px black;
+    background-color: rgb(235, 215, 215);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.dashboard-block_edit {
+    background: url(./../assets/images/edit.jpg) no-repeat center center/ cover;
+}
+
+.dashboard-block_main {
+    background: url(./../assets/images/main.jpg) no-repeat center center/ cover;
+}
+
+.dashboard-block_reservations {
+    background: url(./../assets/images/reservation.jpg) no-repeat center center/ cover;
+}
+
+.dashboard-block_logout {
+    background: url(./../assets/images/logout.jpg) no-repeat center center/ cover;
+}
+
+.dashboard-title {
+    width: inherit;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.dashboard-subtitle {
+    width: 70%;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+}
+
+.dashboard-hidden-mail {
+    display: none;
+}

@@ -1,6 +1,6 @@
 import { dictionary } from './dictionary.js';
 import LanguageSwitcher from "./LanguageSwitcher.js";
-import Header from "./Header.js";
+//import Header from "./Header.js";
 
 class LoginPage {
     constructor() {
@@ -21,8 +21,9 @@ class LoginPage {
                 <label class="login-form_label" data-key="login-password" for="password">${dictionary[this.currentLanguage]['login-password']}</label>
                 <input data-key="placeholder-password" type="password" class="login-form_input" id="password" name="password" placeholder="${dictionary[this.currentLanguage]['placeholder-password']}">
                 <button type="submit" class="login-form_button welcome_page_button" data-key="login-button">${dictionary[this.currentLanguage]['login-button']}</button>
+                <p class="login-register">No Account? <a href="/users/register">Register</a></p>
             </form>
-            <p>No Account?<a href="/users/register">Register</a></p>
+            
         </div>
         <div class='login_page_right-side welcome_page_left-side'></div>
         `;
@@ -30,13 +31,15 @@ class LoginPage {
     }
 }
 
-const languageSwitcher = new LanguageSwitcher().renderLanguageSwitcher();
 const login =  new LoginPage().renderLoginPage();
 
 window.addEventListener('load', () => {
-    document.body.appendChild(login);
-    document.body.appendChild(languageSwitcher);
+    document.querySelector('.app_main').appendChild(login);
+    const languageSwitcher = new LanguageSwitcher();
+    languageSwitcher.initLanguageSwitcher();
 });
+
+//export default LoginPage;
 
 
 

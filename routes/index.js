@@ -85,11 +85,11 @@ router.get('/dashboard', ensureAuthenticated, (req, res) => {
             }).then( elem => {
             res.render('dashboard', {
                 name: req.user.name,
+                email: req.user.email
                 reservations: reservations,
                 errors : errors
             })}
         )
-
     }
 );
 

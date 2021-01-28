@@ -1,10 +1,37 @@
-<h1 class="mt-4">Dashboard</h1>
-<%- include ("./partials/messages.ejs") %>
-<p class="lead mb-3">Welcome <%= name %></p>
-<a href="/users/logout" class="btn btn-secondary">Logout</a>
-<a href="/reservation" class="btn btn-secondary">Reservation</a>
-<p><%= reservations %></p>
+<div class="dashboard-page">
+    <div data-aim="dashboard" class="dashboard-block dashboard-block_edit" id="edit">
+        <div class="dashboard-block_layout">
+            <h2 class="dashboard-title">Edit Your Profile</h2>
+            <p class="dashboard-subtitle">Answer few questions and we will help you to find perfect restaurants matching
+                your cuisine preferences and location</p>
+        </div>
+    </div>
+    <div data-aim="dashboard" class="dashboard-block dashboard-block_main" id="main">
+        <div class="dashboard-block_layout">
+            <h2 class="dashboard-title">Explore Main Page</h2>
+            <p class="dashboard-subtitle">Check our restaurant's suggestions and filter results by location and tastes
+            </p>
+        </div>
+    </div>
+    <div data-aim="dashboard" class="dashboard-block dashboard-block_reservations" id="reservation">
+        <div class="dashboard-block_layout">
+            <h2 class="dashboard-title">Check Your Reservations</h2>
+            <p class="dashboard-subtitle">Control and manage your current restaurant's bookings</p>
+        </div>
+    </div>
+    <div data-aim="dashboard" class="dashboard-block dashboard-block_logout" id="logout">
+        <div class="dashboard-block_layout">
+            <h2 class="dashboard-title">Logout from Our App </h2>
+            <p class="dashboard-subtitle">Leave our application and get to the login page</p>
+        </div>
+    </div>
+    <div class="dashboard-central-block">
+        <h1 class="mt-4">Dashboard</h1>
+        <%- include ("./partials/messages.ejs") %>
+        <p class="lead mb-3 dashboard-title">Welcome, <span class="user-name"><%= name %></span>!</p>
+        <p class="dashboard-hidden-mail"><span class="user-email"><%= email %></span>!</p>
+        <p class="dashboard-subtitle">What would you like to do?</p>
+    </div>
 
-
-<script type="module" src="/public/javascript/Header.js"></script>
-
+</div>
+<script type="module" src="/public/javascript/Main.js"></script>

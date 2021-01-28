@@ -1,0 +1,73 @@
+.search-form {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    align-items: center;
+
+    &_button {
+        padding: 5px 10px;
+        font-weight: 700;
+        height: 40px;
+        cursor: pointer;
+        border: none;
+        border-radius: 10px;
+        background: rgb(65, 19, 19);
+        color: white;
+        outline: none;
+    }
+
+    &_input {
+        width: 100%;
+        height: 40px;
+        padding: 10px 0px 10px 50px;
+        border-radius: 10px 10px 0px 0px;
+        border: none;
+        outline: none;
+
+        &_wrapper {
+            position: relative;
+            z-index: 3;
+        }
+
+        &-state {
+            background: url(./../assets/images/location.png) no-repeat left 10px center / 15%, rgba(143, 114, 114, 0.5);
+        }
+
+        &-cuisine {
+            background: url(./../assets/images/star.png) no-repeat left 10px center / 15%, rgba(143, 114, 114, 0.5);
+        }
+
+        &_list {
+            list-style-type: none;
+            max-height: 300px;
+            overflow: auto;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 40px;
+            background: rgb(250, 230, 230) !important;
+            z-index: 3;
+
+            &-item {
+                padding: 5px;
+                cursor: pointer;
+                
+
+                &:hover {
+                    background: rgb(212, 185, 185);
+                }
+
+            }
+        }
+
+    }
+}
+
+.hide-item {
+    display: none;
+}
+
+.required-field {
+    border: 1px solid rgb(114, 30, 30);
+    color: rgb(139, 36, 36);
+}

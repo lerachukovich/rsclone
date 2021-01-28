@@ -1,0 +1,44 @@
+@import './header_style.less';
+@import './main_style.css';
+@import './welcome-page_style.less';
+@import './login-page_style.less';
+@import './menu_style.less';
+@import './footer_style.less';
+@import './search-form_style.less';
+@import './carousel_style.less';
+@import './restaurant-card_style.less';
+@import './restaurant-page_style.css';
+@import './restaurant-menu_style.less';
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: rgba(161, 132, 132, 0.3);
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.app_container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.spinner {
+  margin: 100px auto;
+  width: 300px;
+  height: 300px;
+  background: url(./../assets/images/spinner13.gif) no-repeat center center / cover;
+}
