@@ -80,7 +80,7 @@ router.get('/dashboard', ensureAuthenticated, (req, res) => {
                     reservations.push(elem);
                 })
                 } else {
-                    req.flash('error_msg', 'You are now registered and can log in');
+                    req.flash('error_msg', 'You do not have any reservations yet');
                 }
             }).then( elem => {
             res.render('dashboard', {
