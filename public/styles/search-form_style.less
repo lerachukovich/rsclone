@@ -1,6 +1,6 @@
 .search-form {
     display: flex;
-    width: 70%;
+    width: 80%;
     justify-content: space-around;
     align-items: center;
 
@@ -26,6 +26,7 @@
 
         &_wrapper {
             position: relative;
+            z-index: 3;
         }
 
         &-state {
@@ -44,14 +45,16 @@
             width: 100%;
             left: 0;
             top: 40px;
-            background: rgba(212, 185, 185, 0.5);
+            background: rgb(250, 230, 230) !important;
+            z-index: 3;
 
             &-item {
                 padding: 5px;
                 cursor: pointer;
+                
 
                 &:hover {
-                    background: rgba(212, 185, 185, 0.7);
+                    background: rgb(212, 185, 185);
                 }
 
             }

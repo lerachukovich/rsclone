@@ -23,19 +23,15 @@
         <div class="dashboard-block_layout">
             <h2 class="dashboard-title">Logout from Our App </h2>
             <p class="dashboard-subtitle">Leave our application and get to the login page</p>
-            <a href="/users/logout" class="btn btn-secondary">Logout</a>
         </div>
     </div>
     <div class="dashboard-central-block">
         <h1 class="mt-4">Dashboard</h1>
         <%- include ("./partials/messages.ejs") %>
-        <p class="lead mb-3 dashboard-title">Welcome,<span class="user-name"><%= name %></span>!</p>
+        <p class="lead mb-3 dashboard-title">Welcome, <span class="user-name"><%= name %></span>!</p>
         <p class="dashboard-hidden-mail"><span class="user-email"><%= email %></span>!</p>
         <p class="dashboard-subtitle">What would you like to do?</p>
     </div>
 
-
-    <!-- <a href="/reservation" class="btn btn-secondary reservation-btn">Reservation</a>
-    <a href="#menu" class="btn btn-secondary menu-btn" data-hash="menu">Menu</a> -->
 </div>
 <script type="module" src="/public/javascript/Main.js"></script>

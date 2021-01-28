@@ -4,11 +4,23 @@ import CuisinesCarousel from './CuisinesCarousel.js';
 import RestaurantsCarousel from './RestaurantsCarousel.js';
 import EditProfilePage from './EditProfilePage.js';
 import LanguageSwitcher from './LanguageSwitcher.js';
+import { dictionary } from './dictionary.js';
 
 
 class Main {
     constructor() {
         this.appMain = document.querySelector('.app_main');
+        this.currentLanguage = localStorage.getItem('current-lang') || 'en';
+    }
+
+    addLogoutBtnToFooter() {
+        const logoutBtn = document.createElement('a');
+        logoutBtn.classList.add('logout-button');
+        logoutBtn.href='/users/logout';
+        logoutBtn.dataset.key = 'logout-btn';
+        logoutBtn.innerHTML = dictionary[this.currentLanguage]['logout-btn'];
+
+        document.querySelector('.app_footer').appendChild(logoutBtn);
     }
 
     addSpinner() {
@@ -28,7 +40,6 @@ class Main {
             return Math.floor(Math.random() * (max - min + 1)) + 1;
         };
 
-        //const randomPage = Math.floor(Math.random() * (20 - 1 + 1)) + 1;
         const randomPage = getRandomPage(1, 20);
         
         const url = `https://api.documenu.com/v2/restaurants/search/fields?fullmenu=true&key=9509fd93681327cefe078c26c8fb0ca2&page=${randomPage}`;
@@ -60,12 +71,8 @@ class Main {
     }
 
     addMenuToHeader() {
-        //const headerRightPart = document.querySelector('.header_right-part');
-        
         const appMenu = new Menu().renderMenu();
         return appMenu;
-
-        //headerRightPart.appendChild(appMenu);
     }
 
     showLoginPage() {
@@ -74,7 +81,6 @@ class Main {
     }
 
     clearMainPage() {
-        //const currentMainPageContext = document.querySelector('.app_main');
         this.appMain.innerHTML = '';
     }
 
@@ -85,58 +91,62 @@ class Main {
     }
 
     handleClicks(e) {
-        const dashboardBlock = e.target.closest('.dashboard-block');
-        console.dir(window.location);
+        let dashboardBlock;
 
-        if(dashboardBlock.dataset.aim === 'dashboard' && e.target.id !== 'logout') {
-            //window.location.pathname = '/';
-            const headerRightPart = document.querySelector('.header_right-part');
+        if(e.target.closest('.dashboard-block') !== null) {
+            dashboardBlock = e.target.closest('.dashboard-block');
 
-            const searchingForm = this.addSearchFormToHeader();
-            const appMenuBtn = this.addMenuToHeader();
+            if(dashboardBlock.id && dashboardBlock.id === 'main') {
+                this.clearMainPage();
+                this.renderDefaultMainPage();
+            }
 
-            headerRightPart.appendChild(searchingForm);
-            headerRightPart.appendChild(appMenuBtn);
+            if(dashboardBlock.id && dashboardBlock.id === 'logout') {
+                window.location.pathname = '/users/logout';
+            }
 
+            if(dashboardBlock.id && dashboardBlock.id === 'edit') {                
+                this.clearMainPage();
+                const editProfilePage = new EditProfilePage(this.appMain, this.userName, this.userMail);
+                editProfilePage.renderEditProfilePage();
+            }
         }
 
-        if(dashboardBlock.id === 'main') {
-            this.clearMainPage();
-            this.renderDefaultMainPage();
+        if(e.target.closest('.menu_list') !== null) {
+            if(e.target.dataset.key === 'about-us') {
+                this.clearMainPage();
+                this.renderDefaultMainPage();
+
+            }
+
+            if(e.target.dataset.key === 'your-profile') {
+                this.clearMainPage();
+                const editProfilePage = new EditProfilePage(this.appMain, this.userName, this.userMail);
+                editProfilePage.renderEditProfilePage();
+            }
         }
-
-        if(dashboardBlock.id === 'logout') {
-            window.location.pathname = '/users/logout';
-        }
-
-        if(dashboardBlock.id === 'edit') {
-            const userName = document.querySelector('.user-name').textContent;
-            const userMail = document.querySelector('.user-email').textContent;
-          
-            this.clearMainPage();
-            const editProfilePage = new EditProfilePage(this.appMain, userName, userMail);
-            editProfilePage.renderEditProfilePage();
-            //this.editProfilePage(this.appMain, userName, userMail);
-        }
-
-        if(e.target.id === 'login-btn') {
-            e.preventDefault();
-
-            const searchingForm = this.addSearchFormToHeader();
-            const appMenuBtn = this.addMenuToHeader();
-
-            headerRightPart.appendChild(searchingForm);
-            headerRightPart.appendChild(appMenuBtn);
-
-            this.clearMainPage();
-            this.renderDefaultMainPage();
-        }
+        
     }
 
     initMain() {
         window.addEventListener('click', (e) => this.handleClicks(e));  
+
         const languageSwitcher = new LanguageSwitcher();
         languageSwitcher.initLanguageSwitcher();
+
+        const searchingForm = this.addSearchFormToHeader();
+        const appMenuBtn = this.addMenuToHeader();
+
+        const headerRightPart = document.querySelector('.header_right-part');
+
+        headerRightPart.appendChild(searchingForm);
+        headerRightPart.appendChild(appMenuBtn);
+
+        this.addLogoutBtnToFooter();
+
+        this.userName = document.querySelector('.user-name').textContent;
+        this.userMail = document.querySelector('.user-email').textContent;
+
     }
 }
 

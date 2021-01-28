@@ -26,3 +26,7 @@
 .login-form_button {
   margin: 20px 0 0 0;
 }
+p.login-register {
+  width: fit-content;
+  margin-top: 10px;
+}

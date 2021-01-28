@@ -16,7 +16,7 @@ export const dictionary = {
         'placeholder-email': 'Enter email',
         'placeholder-password': 'Enter password',
         'your-profile': 'Your profile',
-        'about-us': 'About us',
+        'about-us': 'Main page',
         'settings': 'Settings',
         'favorites': 'Favorites',
         'history': 'History',
@@ -59,7 +59,8 @@ export const dictionary = {
         'edit-requests': 'Special requests',
         'edit-requests-descr': 'Restaurants will do their best to accommodate any special requests that you have.',
         'edit-requests-placeholder': 'Add a special request',
-        'edit-submit-button': 'Save changes'
+        'edit-submit-button': 'Save changes',
+        'logout-btn': 'Logout'
     },
     'ru': {
         'discover': 'Открывай.',
@@ -78,7 +79,7 @@ export const dictionary = {
         'placeholder-email': 'Введите почту',
         'placeholder-password': 'Введите пароль',
         'your-profile': 'Ваш профиль',
-        'about-us': 'О нас',
+        'about-us': 'Главная страница',
         'settings': 'Настройки',
         'favorites': 'Избранное',
         'history': 'История',
@@ -121,6 +122,7 @@ export const dictionary = {
         'edit-requests': 'Особые пожелания',
         'edit-requests-descr': 'Рестораны сделают все возможное, чтобы исполнить все Ваши особые пожеланияю',
         'edit-requests-placeholder': 'Укажите дополнительную информацию или пожелания',
-        'edit-submit-button': 'Cохранить измненения'
+        'edit-submit-button': 'Cохранить измненения',
+        'logout-btn': 'Выйти'
     }
 };

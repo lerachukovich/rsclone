@@ -10,6 +10,28 @@ class EditProfilePage {
         this.usersEmail = usersEmail;
     }
 
+    renderProgressBar(percent) {
+        if(this.progressBar) {
+            this.progressBar.remove();
+        }
+
+        this.progressBar = document.createElement('div');
+        this.progressBar.classList.add('bar-wrapper');
+
+        const progressPart = document.createElement('div');
+        progressPart.classList.add('bar-progress');
+
+        progressPart.style.width = percent + '%';
+
+        const restPart = document.createElement('div');
+        restPart.classList.add('bar-rest');
+
+        this.progressBar.appendChild(progressPart);
+        this.progressBar.appendChild(restPart);
+
+        document.querySelector('.edit-page_header').appendChild(this.progressBar);
+    }
+
     countCompletePercentage() {
         const questionsToAnswer = document.querySelectorAll('[data-edit="true"]');
         const questionsAmount = questionsToAnswer.length;
@@ -23,8 +45,8 @@ class EditProfilePage {
         const profileCompletedPercent = parseInt((completedQuestions.length * 100) / questionsAmount);
 
         document.querySelector('.profile-percent').textContent = profileCompletedPercent + '%';
+        this.renderProgressBar(profileCompletedPercent);
     }
-
 
     saveInfoToLocalStorage() {
         const nameValue = document.querySelector('#edit-name').value;
@@ -165,7 +187,10 @@ class EditProfilePage {
 
         editPageForm.appendChild(editSubmitButton);
 
-        editPageForm.addEventListener('click', (e) => this.saveInfoToLocalStorage());
+        editPageForm.addEventListener('click', (e) => {
+            this.saveInfoToLocalStorage();
+            this.countCompletePercentage();
+        });
         
         editProfilePageWrapper.appendChild(editPageContent);
 

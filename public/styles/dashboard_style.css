@@ -5,6 +5,7 @@
     align-items: center;
     flex-wrap: wrap;
     position: relative;
+    z-index: 0;
 }
 
 .dashboard-block {
@@ -44,6 +45,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .dashboard-block_edit {
@@ -63,7 +65,9 @@
 }
 
 .dashboard-title {
-    font-size: 35px;
+    width: inherit;
+    text-align: center;
+    font-size: 30px;
     font-weight: 700;
     margin-bottom: 10px;
 }
