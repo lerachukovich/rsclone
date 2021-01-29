@@ -17,6 +17,16 @@
         <div class="dashboard-block_layout">
             <h2 class="dashboard-title">Check Your Reservations</h2>
             <p class="dashboard-subtitle">Control and manage your current restaurant's bookings</p>
+
+            <div id="userReservations">
+            <% reservations.forEach( elem => { %>
+                <ul>
+                    <li>Guest Amount: <%= elem.guestAmount %></li>
+                    <li>Reservation Time: <%= elem.reservationTime %></li>
+                    <li>Reservation Date: <%= elem.reservationDate %></li>
+                </ul>
+                <% }) %>
+            </div>
         </div>
     </div>
     <div data-aim="dashboard" class="dashboard-block dashboard-block_logout" id="logout">
@@ -26,7 +36,6 @@
         </div>
     </div>
     <div class="dashboard-central-block">
-        <h1 class="mt-4">Dashboard</h1>
         <%- include ("./partials/messages.ejs") %>
         <p class="lead mb-3 dashboard-title">Welcome, <span class="user-name"><%= name %></span>!</p>
         <p class="dashboard-hidden-mail"><span class="user-email"><%= email %></span>!</p>

@@ -17,7 +17,7 @@ class SearchFormInput {
             activeInput.classList.remove('required-field');
             activeInput.value = '';
         }
-        
+
         if(!activeInputWrapper.querySelector('.search-form_input_list')) {
             const inputList = document.createElement('ul');
             inputList.classList.add('search-form_input_list');
@@ -41,9 +41,9 @@ class SearchFormInput {
 
     }
 
-    delateSelectList(e) {
+    deleteSelectList(e) {
         const activeSearchInput = e.target.closest('.search-form_input_wrapper');
-        
+
         if(activeSearchInput.querySelector('.search-form_input_list')) {
             setTimeout(function() {
                 activeSearchInput.querySelector('.search-form_input_list').remove();}, 500);
@@ -88,7 +88,7 @@ class SearchFormInput {
         //         this.value = e.target.innerText;
         //     }
         // };
-    
+
     }
 
     renderSearchFormInput() {
@@ -109,7 +109,7 @@ class SearchFormInput {
         this.searchFormInputWrapper.appendChild(searchFormInput);
 
         searchFormInput.addEventListener('input', this.findInputItem);
-        searchFormInput.addEventListener('blur', this.delateSelectList);
+        searchFormInput.addEventListener('blur', this.deleteSelectList);
 
         return this.searchFormInputWrapper;
     }
