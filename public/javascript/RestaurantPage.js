@@ -125,10 +125,10 @@ class RestaurantPage {
         restaurantBookingFormWrapper.classList.add('restaurant-page_booking_form_wrapper');
 
         restaurantBookingFormWrapper.innerHTML = `
-        <h3 data-key="restaurant-booking-form" class="restaurant-page_title">${dictionary[this.currentLanguage]['restaurant-booking-form']}</h3>
+        <h3 data-key="restaurant-booking-form" class="restaurant-page_title"><i class="fas fa-glass-cheers"></i> ${dictionary[this.currentLanguage]['restaurant-booking-form']}</h3>
         `;
 
-        const restaurantBookingForm = new BookingForm().renderBookingForm();
+        const restaurantBookingForm = new BookingForm().renderBookingForm(this.restaurantInfo.restaurant_id);
 
         restaurantBookingFormWrapper.appendChild(restaurantBookingForm);
 
@@ -172,7 +172,7 @@ class RestaurantPage {
         console.log(this.restaurantInfo);
         const restaurantPage = document.createElement('div');
         restaurantPage.classList.add('restaurant-page');
-        
+
         const restaurantPageInfo = document.createElement('div');
         restaurantPageInfo.classList.add('restaurant-page_info');
 
