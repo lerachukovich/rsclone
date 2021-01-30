@@ -1,5 +1,4 @@
 import { dictionary } from './dictionary.js';
-
 class LanguageSwitcher {
 
     changeLanguage(e) {
@@ -28,17 +27,19 @@ class LanguageSwitcher {
 
     initLanguageSwitcher() {
         const languageSwitcher = document.querySelector('.lang_wrapper');
-        // const languageSwitcher = document.createElement('div');
-        // languageSwitcher.classList.add('lang_wrapper');
 
-        // languageSwitcher.innerHTML = `
-        // <div class="en-lang lang_active" data-lang="en"></div>
-        // <div class="ru-lang" data-lang="ru"></div>
-        //`;
+        if(localStorage.getItem('current-lang')) {
+            const langNow = localStorage.getItem('current-lang');
+            const langNowButton = document.querySelector(`[data-lang="${langNow}"]`);
+            
+            if(document.querySelector('.lang_active')) {
+                document.querySelector('.lang_active').classList.remove('lang_active');
+            }
+    
+            langNowButton.classList.add('lang_active');
+        }
 
         languageSwitcher.addEventListener('click', this.changeLanguage);
-
-        localStorage.setItem('current-lang', 'en');
 
         return languageSwitcher;
     }

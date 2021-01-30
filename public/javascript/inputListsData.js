@@ -59,6 +59,8 @@ export const cuisinesList = ['Chinese', 'Asian', 'French', 'American', 'Chicken'
 
 export const statesList = Object.keys(statesCodes);
 
+export const statesListValues = Object.values(statesCodes);
+
 
 export const cuisinesData = [
     {'name': 'Asian',

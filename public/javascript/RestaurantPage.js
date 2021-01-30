@@ -3,9 +3,10 @@ import RestaurantMenu from './RestaurantMenu.js';
 import BookingForm from './BookingForm.js';
 
 class RestaurantPage {
-    constructor(cardInfo) {
+    constructor(cardInfo, imageSource) {
         this.restaurantInfo = cardInfo;
         this.currentLanguage = localStorage.getItem('current-lang') || 'en';
+        this.imageSrc = imageSource;
     }
 
     openMenu() {
@@ -58,7 +59,7 @@ class RestaurantPage {
         const cuisines = this.restaurantInfo.cuisines[0] !== '' ? this.restaurantInfo.cuisines[0] : 'Mixed';
 
         restaurantPageOverview.innerHTML = `
-        <h3 id="overview" data-key="restaurant-nav-photos" class="restaurant-page_title">${dictionary[this.currentLanguage]['restaurant-nav-overview']}</h3>
+        <h3 id="overview" data-key="restaurant-nav-overview" class="restaurant-page_title">${dictionary[this.currentLanguage]['restaurant-nav-overview']}</h3>
         <div class="restaurant-page_overview_wrapper">
             <div class="restaurant-page_overview_name">${this.restaurantInfo.restaurant_name}</div>
             <div class="restaurant-page_overview_address restaurant-page_overview_item">
@@ -173,8 +174,12 @@ class RestaurantPage {
         const restaurantPage = document.createElement('div');
         restaurantPage.classList.add('restaurant-page');
 
+        restaurantPage.style.backgroundImage = `url(${this.imageSrc})`;
+
         const restaurantPageInfo = document.createElement('div');
         restaurantPageInfo.classList.add('restaurant-page_info');
+
+
 
         this.renderRestaurantNav(restaurantPageInfo);
         this.renderRestaurantOverview(restaurantPageInfo);

@@ -92,6 +92,18 @@ class RestaurantsCarousel {
         carouselTitle.textContent = dictionary[this.currentLanguage]['restaurants-carousel-title'];
         carouselContainer.appendChild(carouselTitle);
 
+        if(restaurantsData.length === 0) {
+            const carouselMessage = document.createElement('div');
+            carouselMessage.classList.add('carousel-message');
+            carouselMessage.dataset.key = 'carousel-message';
+            carouselMessage.textContent = dictionary[this.currentLanguage]['carousel-message'];
+
+            carouselContainer.appendChild(carouselMessage);
+            this.parentElement.appendChild(carouselContainer);
+
+            return;
+        }
+
         const carousel = document.createElement('div');
         carousel.classList.add('carousel', 'carousel-restaurants');
 
@@ -125,12 +137,6 @@ class RestaurantsCarousel {
 
             cuisineCardWrapper.style.width = cuisineCardWidth + 'px';
             cuisineCardWrapper.style.height = cuisineCardHeight + 'px';
-
-            // cuisineCardWrapper.innerHTML = `
-            // <div class="cuisine_card_layout">
-            //     <div class="cuisine_card_title">Best ${item.restaurant_name} Restaurants</div>            
-            // </div>
-            // `;
 
             const restaurantCardContent = new RestaurantCard(item).renderRestaurantCard();
 

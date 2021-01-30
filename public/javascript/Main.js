@@ -11,6 +11,14 @@ class Main {
     constructor() {
         this.appMain = document.querySelector('.app_main');
         this.currentLanguage = localStorage.getItem('current-lang') || 'en';
+
+        const getRandomPage = (min, max) => {
+            return Math.floor(Math.random() * (max - min + 1)) + 1;
+        };
+
+        const randomPage = getRandomPage(1, 20);
+        
+        this.defaultUrl = `https://api.documenu.com/v2/restaurants/search/fields?fullmenu=true&key=ceac53a25a3e0c72db4a54003c38c2b7&page=${randomPage}`;
     }
 
     addLogoutBtnToFooter() {
@@ -29,26 +37,11 @@ class Main {
         this.defaultTMainPageWrapper.appendChild(this.spinner);
     }
 
-    renderDefaultMainPage() {
-
+    renderDefaultMainPage(url) {
         this.defaultTMainPageWrapper = document.createElement('div');
         this.defaultTMainPageWrapper.classList.add('default-main-page_wrapper');
 
         this.appMain.appendChild(this.defaultTMainPageWrapper);
-
-        const getRandomPage = (min, max) => {
-            return Math.floor(Math.random() * (max - min + 1)) + 1;
-        };
-
-        const randomPage = getRandomPage(1, 20);
-        
-        const url = `https://api.documenu.com/v2/restaurants/search/fields?fullmenu=true&key=ceac53a25a3e0c72db4a54003c38c2b7&page=${randomPage}`;
-
-        // const newRestCarousel = new RestaurantsCarousel(url, this.appMain);
-        // newRestCarousel.getRestaurantsDataForDefaultCarousel();
-
-        // const newCarousel = new CuisinesCarousel().renderCarousel();
-        // this.appMain.appendChild(newCarousel);
 
         let renderRestaurantCarouselPromise = new Promise((resolve, reject) => {
             this.addSpinner();
@@ -98,7 +91,7 @@ class Main {
 
             if(dashboardBlock.id && dashboardBlock.id === 'main') {
                 this.clearMainPage();
-                this.renderDefaultMainPage();
+                this.renderDefaultMainPage(this.defaultUrl);
             }
 
             if(dashboardBlock.id && dashboardBlock.id === 'logout') {
@@ -115,8 +108,7 @@ class Main {
         if(e.target.closest('.menu_list') !== null) {
             if(e.target.dataset.key === 'about-us') {
                 this.clearMainPage();
-                this.renderDefaultMainPage();
-
+                this.renderDefaultMainPage(this.defaultUrl);
             }
 
             if(e.target.dataset.key === 'your-profile') {

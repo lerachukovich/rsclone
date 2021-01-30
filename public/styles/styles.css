@@ -567,12 +567,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  flex: 2 1;
 }
 
-.restaurant-card_image,
-.restaurant-card_info {
-  flex: 1 1;
+
+.restaurant-card_image {
+  height: 70%;
 }
 
 .restaurant-card_image img {
@@ -583,7 +583,7 @@
 .restaurant-card_info {
   background: #fff;
   width: 100%;
-  height: 100%;
+  height: 30%;
   padding: 5px;
 }
 
@@ -728,4 +728,8 @@ body {
 .bar-rest {
   width: auto;
   height: 100%;
+}
+
+.register-form-wrapper {
+  margin-bottom: 20px !important;
 }
