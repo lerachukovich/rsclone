@@ -2,6 +2,9 @@ import SearchFormInput from './SearchFormInput.js';
 import {statesList, cuisinesList} from './inputListsData.js';
 import { dictionary } from './dictionary.js';
 import { getRestaurantsData } from './getRestaurantsData.js';
+import RestaurantsCarousel from './RestaurantsCarousel.js';
+import {statesCodes} from './inputListsData.js';
+import Main from './Main.js';
 
 class SearchForm{
 
@@ -21,10 +24,16 @@ class SearchForm{
             cuisineInput.value = 'Required field';
         }
 
-        if(cuisineInput && stateInput) {
-            getRestaurantsData(stateInputValue, cuisineInputValue); 
-        }
+        if(cuisineInputValue && stateInputValue) {
 
+            document.querySelector('.app_main').innerHTML = '';
+
+            const stateCode = statesCodes[stateInputValue];
+            const searchUrl = `https://api.documenu.com/v2/restaurants/state/${stateCode}?key=ceac53a25a3e0c72db4a54003c38c2b7&fullmenu=true&cuisine=${cuisineInputValue}`;
+
+            const main = new Main();
+            main.renderDefaultMainPage(searchUrl);
+        }
     }
 
     renderSearchForm() {

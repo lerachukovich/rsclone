@@ -60,7 +60,8 @@ export const dictionary = {
         'edit-requests-descr': 'Restaurants will do their best to accommodate any special requests that you have.',
         'edit-requests-placeholder': 'Add a special request',
         'edit-submit-button': 'Save changes',
-        'logout-btn': 'Logout'
+        'logout-btn': 'Logout',
+        'carousel-message': "Unfortunately, we couldn't find any restaurant that would match your search request. Make a new research please!"
     },
     'ru': {
         'discover': 'Открывай.',
@@ -123,6 +124,7 @@ export const dictionary = {
         'edit-requests-descr': 'Рестораны сделают все возможное, чтобы исполнить все Ваши особые пожеланияю',
         'edit-requests-placeholder': 'Укажите дополнительную информацию или пожелания',
         'edit-submit-button': 'Cохранить измненения',
-        'logout-btn': 'Выйти'
+        'logout-btn': 'Выйти',
+        'carousel-message': 'К сожалению, мы не смогли найти рестораны, удовлетворяющие вашему запросу. Повторите поиск!'
     }
 };

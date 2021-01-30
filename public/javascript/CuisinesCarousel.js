@@ -1,5 +1,7 @@
 import { cuisinesData } from './inputListsData.js';
 import { dictionary } from './dictionary.js';
+import Main from './Main.js';
+import { statesListValues } from './inputListsData.js';
 
 class CuisinesCarousel {
     constructor() {
@@ -15,7 +17,6 @@ class CuisinesCarousel {
         const carouselNavPrev = document.querySelector('.carousel_nav-prev-cuisines');
         let carouselCurrentMarginLeft = parseInt(carouselWrap.style.marginLeft) || 0;
         const carouselHiddenWidth = carouselWrap.offsetWidth - carouselMainContainer.clientWidth;
-        console.log(carouselHiddenWidth, carouselCurrentMarginLeft);
         let currentHiddenWidth = carouselHiddenWidth + parseInt(carouselCurrentMarginLeft);
 
 
@@ -34,23 +35,16 @@ class CuisinesCarousel {
             }
            
         }
-        console.log(currentHiddenWidth, 'currentHiddenWidth');
-        console.log(carouselCurrentMarginLeft, 'carouselCurrentMarginLeft');
 
         if(e.target.className.includes('carousel_nav-next-cuisines')) {
-            console.log(carouselCurrentMarginLeft, carouselHiddenWidth, currentHiddenWidth);
 
             if(carouselMainContainer.clientWidth < currentHiddenWidth) {
                 carouselCurrentMarginLeft = parseInt(carouselCurrentMarginLeft) - carouselMainContainer.clientWidth;
                 carouselWrap.style.marginLeft = (carouselCurrentMarginLeft) + 'px';
                 
-                console.log(carouselCurrentMarginLeft, carouselHiddenWidth, currentHiddenWidth);
             } else {
-                // carouselCurrentMarginLeft +=  (parseInt(carouselCurrentMarginLeft) - currentHiddenWidth);
                 carouselCurrentMarginLeft = carouselWrap.offsetWidth - carouselMainContainer.clientWidth;
                 carouselWrap.style.marginLeft = '-' + (carouselCurrentMarginLeft) + 'px';
-
-                console.log(carouselCurrentMarginLeft, carouselHiddenWidth, currentHiddenWidth);
             }
 
         }
@@ -66,6 +60,22 @@ class CuisinesCarousel {
         } else {
             carouselNavPrev.classList.remove('disabled');
         }
+    }
+
+    rerenderMainCarousel(cuisineName) {
+        const getRandomState = (min, max) => {
+            return Math.floor(Math.random() * (max - min + 1)) + 1;
+        };
+
+        const randomStateNum = getRandomState(1, statesListValues.length);
+        const randomState = statesListValues[randomStateNum];
+        console.log(randomState);
+
+        const cuisineSearchUrl = `https://api.documenu.com/v2/restaurants/state/${randomState}?key=ceac53a25a3e0c72db4a54003c38c2b7&fullmenu=true&cuisine=${cuisineName}`;
+
+        document.querySelector('.app_main').innerHTML = '';
+        const mainPageWrap = new Main();
+        mainPageWrap.renderDefaultMainPage(cuisineSearchUrl);
     }
 
     renderCarousel() {
@@ -122,7 +132,7 @@ class CuisinesCarousel {
 
             carouselWrapper.appendChild(cuisineCardWrapper);
 
-            
+            cuisineCardWrapper.addEventListener('click', () => this.rerenderMainCarousel(item.name));
         });
 
         navArrows.addEventListener('click', this.moveCarousel);
