@@ -138,12 +138,6 @@ class RestaurantsCarousel {
             cuisineCardWrapper.style.width = cuisineCardWidth + 'px';
             cuisineCardWrapper.style.height = cuisineCardHeight + 'px';
 
-            // cuisineCardWrapper.innerHTML = `
-            // <div class="cuisine_card_layout">
-            //     <div class="cuisine_card_title">Best ${item.restaurant_name} Restaurants</div>            
-            // </div>
-            // `;
-
             const restaurantCardContent = new RestaurantCard(item).renderRestaurantCard();
 
             cuisineCardWrapper.appendChild(restaurantCardContent);

@@ -6,6 +6,13 @@ class RestaurantCard {
         this.cardInfo = cardInfo;
 
         this.currentLanguage = localStorage.getItem('current-lang') || 'en';
+
+        const getRandomImage = (min, max) => {
+            return Math.floor(Math.random() * (max - min + 1)) + 1;
+        };
+
+        const randomImageNum = getRandomImage(1, 55);
+        this.imageSrc = `./assets/restaurants-images/${randomImageNum}.jpg`;
     }
 
     renderRestaurantPage() {
@@ -14,7 +21,7 @@ class RestaurantCard {
 
         console.log(this);
 
-        const restaurantPage = new RestaurantPage(this.cardInfo).renderRestaurantPage();
+        const restaurantPage = new RestaurantPage(this.cardInfo, this.imageSrc).renderRestaurantPage();
         mainAppPage.appendChild(restaurantPage);
     }
 
@@ -23,10 +30,10 @@ class RestaurantCard {
         restaurantCard.classList.add('restaurant-card');
 
         const cuisinesType = this.cardInfo.cuisines[0] !== '' ? this.cardInfo.cuisines[0] : 'Mixed';
-        
+
         restaurantCard.innerHTML = `
         <div class="restaurant-card_image">
-            <img src="https://www.restoclub.ru/uploads/place_thumbnail_big/b/4/3/8/b438c5b58c7f668d1109236605746bed.jpg">
+            <img src=${this.imageSrc}>
         </div>
         <div class="restaurant-card_info">
             <div class="restaurant-card_info-name">${this.cardInfo.restaurant_name}</div>

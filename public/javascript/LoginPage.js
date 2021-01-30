@@ -21,7 +21,7 @@ class LoginPage {
                 <label class="login-form_label" data-key="login-password" for="password">${dictionary[this.currentLanguage]['login-password']}</label>
                 <input data-key="placeholder-password" type="password" class="login-form_input" id="password" name="password" placeholder="${dictionary[this.currentLanguage]['placeholder-password']}">
                 <button type="submit" class="login-form_button welcome_page_button" data-key="login-button">${dictionary[this.currentLanguage]['login-button']}</button>
-                <p class="login-register">No Account? <a href="/users/register">Register</a></p>
+                <p class="login-register"><span data-key="no-account">No Account? </span><a data-key="register-account" href="/users/register">Register</a></p>
             </form>
             
         </div>

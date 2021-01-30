@@ -142,8 +142,8 @@ class EditProfilePage {
         editPageContent.innerHTML = `
             <div class="edit-page_header">
                     <div>${this.usersName}</div>
-                    <div data-key="edit-percents">
-                        <span>${dictionary[this.currentLanguage]['edit-percents']} </span>
+                    <div>
+                        <span data-key="edit-percents">${dictionary[this.currentLanguage]['edit-percents']} </span>
                         <span class="profile-percent">0 %</span>
                     </div>
             </div>

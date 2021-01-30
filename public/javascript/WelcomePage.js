@@ -55,6 +55,8 @@ window.addEventListener('load', () => {
     document.querySelector('.app_main').appendChild(welcome);
     const languageSwitcher = new LanguageSwitcher();
     languageSwitcher.initLanguageSwitcher();
+
+    localStorage.setItem('current-lang', 'en');
 });
 
 export default WelcomePage;
