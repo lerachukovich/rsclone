@@ -4,6 +4,7 @@
 @import 'edit-page_style.css';
 @import 'login-page_style.css';
 @import 'search-form_style.css';
+@import "reservation.css";
 
 .app_header {
   width: 100%;
