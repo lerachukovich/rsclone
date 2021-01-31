@@ -21,14 +21,15 @@
             <p class="dashboard-subtitle" data-key="check-reservations-descr">Control and manage your current
                 restaurant's bookings</p>
 
-            <div id="userReservations">
+            <div id="userReservations" class="invisible">
                 <% reservations.forEach( elem => { %>
-                <ul>
-                    <li>Guest Amount: <%= elem.guestAmount %></li>
-                    <li>Reservation Time: <%= elem.reservationTime %></li>
-                    <li>Reservation Date: <%= elem.reservationDate %></li>
+                <ul class="reservation-card">
+                    <li class="reservation-card-parameter">Guest Amount: <span class="reservation-card-data"><%= elem.guestAmount %></span></li>
+                    <li class="reservation-card-parameter">Reservation Time: <span class="reservation-card-data"><%= elem.reservationTime %></span></li>
+                    <li class="reservation-card-parameter">Reservation Date: <span class="reservation-card-data"><%= elem.reservationDate %></span></li>
                 </ul>
                 <% }) %>
+                <button id="close_btn">X</button>
             </div>
         </div>
     </div>
@@ -49,3 +50,4 @@
 </div>
 <script type="module" src="/public/javascript/Main.js"></script>
 <script type="module" src="/public/javascript/changeLanguage.js"></script>
+<script type="module" src="/public/javascript/Reservations.js"></script>
