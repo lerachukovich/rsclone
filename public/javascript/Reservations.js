@@ -9,8 +9,17 @@ class Reservations {
         this.reservationsContainer.appendChild(this.reservationsContent);
         this.handleClicks();
     }
+
     handleClicks() {
         this.reservationsContainer.addEventListener('click', () => {
+            this.reservationsContent.classList.toggle('invisible');
+        });
+
+        this.reservationsContent.addEventListener('click', () => {
+            this.reservationsContent.classList.toggle('invisible');
+        });
+
+        this.closeButton.addEventListener('click', () => {
             this.reservationsContent.classList.toggle('invisible');
         });
     }
@@ -19,11 +28,6 @@ class Reservations {
 window.addEventListener('load', () => {
     return new Reservations().renderReservations();
 });
-
-
-
-
-
 
 
 export default Reservations;
