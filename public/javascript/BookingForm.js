@@ -5,7 +5,7 @@ class BookingForm {
         this.currentLanguage = localStorage.getItem('current-lang') || 'en';
     }
 
-    renderBookingForm(restaurant_id) {
+    renderBookingForm(restaurant_id, restaurant_name) {
         const bookingForm = document.createElement('form');
         bookingForm.setAttribute("action", "/reservation");
         bookingForm.setAttribute("method", "POST");
@@ -40,7 +40,8 @@ class BookingForm {
             </div>
             
             <div style="display: none">
-                <input type="number" name="restaurantId" value="${restaurant_id}">            
+                <input type="number" name="restaurantId" value="${restaurant_id}">       
+                <input type="text" name="restaurantName" value="${restaurant_name}">     
             </div>
         </div>
         <button class="restaurant-page_menu_button" type="submit" data-key="find-table">${dictionary[this.currentLanguage]['find-table']}</button>

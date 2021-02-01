@@ -20,7 +20,7 @@ router.get('/reservation', (req, res) => res.render('partials/reservation'));
 
 // Reservation form handler
 router.post('/reservation', ensureAuthenticated, (req, res) => {
-    const { guestAmount, reservationDate, reservationTime, restaurantId } = req.body;
+    const { guestAmount, reservationDate, reservationTime, restaurantId, restaurantName } = req.body;
     const email = req.user.email;
     let errors = [];
 
@@ -53,6 +53,7 @@ router.post('/reservation', ensureAuthenticated, (req, res) => {
                 } else {
                     const newReservation = new Reservation({
                         email: email,
+                        restaurantName,
                         restaurantId,
                         guestAmount,
                         reservationDate,

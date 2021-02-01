@@ -133,7 +133,7 @@ class RestaurantPage {
         <h3 data-key="restaurant-booking-form" class="restaurant-page_title"><i class="fas fa-glass-cheers"></i> ${dictionary[this.currentLanguage]['restaurant-booking-form']}</h3>
         `;
 
-        const restaurantBookingForm = new BookingForm().renderBookingForm(this.restaurantInfo.restaurant_id);
+        const restaurantBookingForm = new BookingForm().renderBookingForm(this.restaurantInfo.restaurant_id, this.restaurantInfo.restaurant_name);
 
         restaurantBookingFormWrapper.appendChild(restaurantBookingForm);
 

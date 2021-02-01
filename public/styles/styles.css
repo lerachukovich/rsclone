@@ -7,7 +7,9 @@
 @import  'map_styles.css';
 @import  'reviews_style.css';
 @import "reservation.css";
-
+.alert {
+  position: absolute;
+}
 .app_header {
   width: 100%;
   display: flex;

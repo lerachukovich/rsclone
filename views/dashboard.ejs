@@ -9,7 +9,7 @@
     </div>
     <div data-aim="dashboard" class="dashboard-block dashboard-block_main" id="main">
         <div class="dashboard-block_layout">
-            <h2 class="dashboard-title" data-key="explore-main-page">Explore Main Page</h2>
+            <h2 class="dashboard-title" data-key="explore-our-restaurants">Explore Our Restaurants</h2>
             <p class="dashboard-subtitle" data-key="explore-main-page-descr">Check our restaurant's suggestions and
                 filter results by location and tastes
             </p>
@@ -22,11 +22,14 @@
                 restaurant's bookings</p>
 
             <div id="userReservations" class="invisible">
-                <% reservations.forEach( elem => { %>
+                <%- include ("./partials/messages.ejs") %>
+            <% reservations.forEach( elem => { %>
                 <ul class="reservation-card">
+                    <li class="reservation-card-parameter">Restaurant: <span class="reservation-card-data"><%= elem.restaurantName %></span></li>
                     <li class="reservation-card-parameter">Guest Amount: <span class="reservation-card-data"><%= elem.guestAmount %></span></li>
                     <li class="reservation-card-parameter">Reservation Time: <span class="reservation-card-data"><%= elem.reservationTime %></span></li>
                     <li class="reservation-card-parameter">Reservation Date: <span class="reservation-card-data"><%= elem.reservationDate %></span></li>
+                    <button id="delete_btn">Delete reservation</button>
                 </ul>
                 <% }) %>
                 <button id="close_btn">X</button>
