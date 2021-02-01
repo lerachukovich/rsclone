@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 const currentDate = Date.now();
 
 const ReservationSchema = new mongoose.Schema({
+    restaurantName: {
+        type: String,
+        required: true
+    },
     restaurantId: {
         type: Number,
         required: true
