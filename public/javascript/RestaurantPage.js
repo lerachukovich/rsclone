@@ -120,7 +120,7 @@ class RestaurantPage {
         `;
 
         const reviews = new Reviews(this.restaurantId, restaurantPageReviews);
-        
+
 
         parentEl.appendChild(restaurantPageReviews);
     }
@@ -187,7 +187,7 @@ class RestaurantPage {
         }).addTo(restaurantMap);
 
         const marker = L.marker([lat, lon]).addTo(restaurantMap);
-        marker.bindPopup("<b>Welcome to our restaurant!</b>").openPopup();
+        marker.bindPopup(`${this.restaurantInfo.address.formatted}`).openPopup();
     }
 
 
