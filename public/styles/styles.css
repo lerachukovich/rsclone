@@ -5,7 +5,9 @@
 @import 'login-page_style.css';
 @import 'search-form_style.css';
 @import "reservation.css";
-
+.alert {
+  position: absolute;
+}
 .app_header {
   width: 100%;
   display: flex;
