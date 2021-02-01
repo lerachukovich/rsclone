@@ -21,8 +21,12 @@ class RestaurantCard {
 
         console.log(this);
 
-        const restaurantPage = new RestaurantPage(this.cardInfo, this.imageSrc).renderRestaurantPage();
-        mainAppPage.appendChild(restaurantPage);
+        const restaurantPage = new RestaurantPage(this.cardInfo, this.imageSrc);
+        const restaurantRenderedPage = restaurantPage.renderRestaurantPage();
+        mainAppPage.appendChild(restaurantRenderedPage);
+
+        const mapParent = document.querySelector('.restaurant-page_booking');
+        restaurantPage.renderRestaurantMap(mapParent);
     }
 
     renderRestaurantCard() {
