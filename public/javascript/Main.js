@@ -17,7 +17,7 @@ class Main {
         };
 
         const randomPage = getRandomPage(1, 20);
-        
+
         this.defaultUrl = `https://api.documenu.com/v2/restaurants/search/fields?fullmenu=true&key=ceac53a25a3e0c72db4a54003c38c2b7&page=${randomPage}`;
     }
 
@@ -46,7 +46,7 @@ class Main {
         let renderRestaurantCarouselPromise = new Promise((resolve, reject) => {
             this.addSpinner();
             const newRestCarousel = new RestaurantsCarousel(url, this.defaultTMainPageWrapper);
-            resolve(newRestCarousel.getRestaurantsDataForDefaultCarousel());                
+            resolve(newRestCarousel.getRestaurantsDataForDefaultCarousel());
         });
 
         renderRestaurantCarouselPromise.then(() => {
@@ -54,7 +54,7 @@ class Main {
                 this.spinner.remove();
             }
             const newCarousel = new CuisinesCarousel().renderCarousel();
-            this.defaultTMainPageWrapper.appendChild(newCarousel);            
+            this.defaultTMainPageWrapper.appendChild(newCarousel);
         });
     }
 
@@ -98,7 +98,7 @@ class Main {
                 window.location.pathname = '/users/logout';
             }
 
-            if(dashboardBlock.id && dashboardBlock.id === 'edit') {                
+            if(dashboardBlock.id && dashboardBlock.id === 'edit') {
                 this.clearMainPage();
                 const editProfilePage = new EditProfilePage(this.appMain, this.userName, this.userMail);
                 editProfilePage.renderEditProfilePage();
@@ -117,11 +117,11 @@ class Main {
                 editProfilePage.renderEditProfilePage();
             }
         }
-        
+
     }
 
     initMain() {
-        window.addEventListener('click', (e) => this.handleClicks(e));  
+        window.addEventListener('click', (e) => this.handleClicks(e));
 
         const languageSwitcher = new LanguageSwitcher();
         languageSwitcher.initLanguageSwitcher();
