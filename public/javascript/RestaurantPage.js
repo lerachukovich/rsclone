@@ -1,12 +1,14 @@
 import { dictionary } from './dictionary.js';
 import RestaurantMenu from './RestaurantMenu.js';
 import BookingForm from './BookingForm.js';
+import Reviews from './Reviews.js';
 
 class RestaurantPage {
     constructor(cardInfo, imageSource) {
         this.restaurantInfo = cardInfo;
         this.currentLanguage = localStorage.getItem('current-lang') || 'en';
         this.imageSrc = imageSource;
+        this.restaurantId = cardInfo.restaurant_id;
     }
 
     openMenu() {
@@ -31,7 +33,6 @@ class RestaurantPage {
         `;
 
         parentEl.appendChild(restaurantPageNav);
-
     }
 
     renderRestaurantPhotos(parentEl) {
@@ -88,7 +89,6 @@ class RestaurantPage {
             </div>
         </div>
         `;
-
         parentEl.appendChild(restaurantPageOverview);
     }
 
@@ -118,6 +118,10 @@ class RestaurantPage {
         restaurantPageReviews.innerHTML = `
         <h3 id="reviews" data-key="restaurant-nav-reviews" class="restaurant-page_title">${dictionary[this.currentLanguage]['restaurant-nav-reviews']}</h3>
         `;
+
+        const reviews = new Reviews(this.restaurantId, restaurantPageReviews);
+
+
         parentEl.appendChild(restaurantPageReviews);
     }
 
@@ -162,10 +166,28 @@ class RestaurantPage {
         <h3 data-key="restaurant-booking-map" class="restaurant-page_title">${dictionary[this.currentLanguage]['restaurant-booking-map']}</h3>
         `;
 
-        // const restaurantMap = new restaurantMap().renderRestaurantMap();
-        // restaurantPageReviews.classList.add('restaurant-page_reviews');
+        const restaurantMapContainer = document.createElement('div');
+        restaurantMapContainer.classList.add('restaurant-map');
+        restaurantMapContainer.id = 'map';
+
+        restaurantMapWrapper.appendChild(restaurantMapContainer);
 
         parentEl.appendChild(restaurantMapWrapper);
+
+        const { lat, lon } = this.restaurantInfo.geo;
+        console.log(lat, lon);
+
+        const restaurantMap = L.map('map').setView([lat, lon], 15);
+
+        L.tileLayer('https://api.mapbox.com/styles/v1/fedola/ckklct3jr3nud17qt4im6gsrx/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZmVkb2xhIiwiYSI6ImNrajFzMnkwYzMzd3UycHNjOWJ1MGFrZ2QifQ.99ycDyPIvF-JWMTnsIFBxA', {
+            maxZoom: 23,
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: 'your.mapbox.access.token',
+        }).addTo(restaurantMap);
+
+        const marker = L.marker([lat, lon]).addTo(restaurantMap);
+        marker.bindPopup(`${this.restaurantInfo.address.formatted}`).openPopup();
     }
 
 
@@ -192,7 +214,7 @@ class RestaurantPage {
 
         this.renderRestaurantBookingForm(restaurantPageBooking);
         this.renderRestaurantCallForm(restaurantPageBooking);
-        this.renderRestaurantMap(restaurantPageBooking);
+        //this.renderRestaurantMap(restaurantPageBooking);
 
         restaurantPage.appendChild(restaurantPageInfo);
         restaurantPage.appendChild(restaurantPageBooking);
