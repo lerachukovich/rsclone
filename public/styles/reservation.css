@@ -1,5 +1,5 @@
 #userReservations {
-    background: #ad7f7f;
+    background: #ffffff;
     z-index: 1;
     position: absolute;
     top: 10%;
@@ -8,12 +8,26 @@
     height: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     overflow: scroll;
 }
+
+.reservation-card_container {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #dddddd;
+    display: flex;
+    align-items: center;
+    border-bottom: none;
+}
+
 .reservation-card {
     list-style: none;
+}
+
+.reservation-guest-amount {
+    font-family: 'Overpass', sans-serif;
+    margin-bottom: 10px;
 }
 
 .invisible {
@@ -29,4 +43,35 @@
     border: none;
     font-size: 2rem;
     padding: 5px 10px 0 0;
+}
+
+#delete_btn {
+    background: transparent;
+    border: 1px solid #dddddd;
+    padding: 15px;
+    border-radius: 10px;
+    font-family: 'Overpass', sans-serif;
+}
+
+.restaurant-name {
+    font-family: 'Vesper Libre', sans-serif;
+    font-size: 2rem;
+}
+
+.reservation-time {
+    display: flex;
+    font-family: 'Overpass', sans-serif;
+    margin-bottom: 20px;
+}
+
+#calendar,
+#party-size {
+    width: 20px;
+}
+
+.restaurant-image {
+    background: url("../assets/restaurants-images/3.jpg") no-repeat center center/ cover;
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
 }
