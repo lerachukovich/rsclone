@@ -62,6 +62,10 @@
     .dashboard-block:nth-child(3) .dashboard-block_layout {
         justify-content: flex-end;
     }
+
+    #userReservations {
+        width: 70%;
+    }
 }
 
 @media screen and (max-width: 900px) {
@@ -78,6 +82,9 @@
         width: 165px;
         padding: 10px 0px 10px 40px;
     }
+
+  
+
 }
 
 @media screen and (max-width: 768px) {
@@ -164,6 +171,10 @@
 
     .menu_wrapper {
         width: 95%;
+    }
+
+    #userReservations {
+        width: 90%;
     }
 }
 
@@ -302,6 +313,10 @@
         padding: 10px 0px 10px 35px;
     }
 
+    #userReservations {
+        width: 98%;
+    }
+
 
 }
 
@@ -327,6 +342,23 @@
         width: 100% !important;
     }
 
+    .reservation-card_container {
+        padding: 10px;
+    }
+
+    .restaurant-image {
+        width: 150px;
+        height: 150px;
+        margin-right: 10px;
+    }
+
+    #delete_btn {
+        padding: 10px 5px;
+    }
+
+    .restaurant-name {
+        font-size: 1.5rem;
+    }
 }
 
 @media screen and (max-width: 425px) {
@@ -409,6 +441,12 @@
 
     .restaurant-page_nav-list li a {
         font-size: 14px;
+    }
+
+    .restaurant-image {
+        width: 100px;
+        height: 100px;
+        margin-right: 10px;
     }
 
 }

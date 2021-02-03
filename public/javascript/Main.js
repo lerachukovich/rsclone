@@ -105,6 +105,10 @@ class Main {
             }
         }
 
+        if(e.target.closest('.header_left-part') !== null) {
+            window.location.pathname = '/dashboard';
+        }
+
         if(e.target.closest('.menu_list') !== null) {
             if(e.target.dataset.key === 'about-us') {
                 this.clearMainPage();
@@ -116,6 +120,7 @@ class Main {
                 const editProfilePage = new EditProfilePage(this.appMain, this.userName);
                 editProfilePage.renderEditProfilePage();
             }
+
         }
 
     }
@@ -133,7 +138,7 @@ class Main {
             const profilePage = new EditProfilePage(this.appMain, this.userName);
             profilePage.renderEditProfilePage();
         }
-
+                
     }
 
     initMain() {
