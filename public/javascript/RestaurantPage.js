@@ -111,6 +111,12 @@ class RestaurantPage {
         openMenuBtn.addEventListener('click', this.openMenu.bind(this));
     }
 
+    toggleReviewsVisibility(e) {
+        const reviewsWrapper = document.querySelector('.restaurant-page_reviews');
+        reviewsWrapper.classList.toggle('reviews-open');
+        e.target.classList.toggle('hide-reviews');
+    }
+
     renderRestaurantReviews(parentEl) {
         const restaurantPageReviews = document.createElement('div');
         restaurantPageReviews.classList.add('restaurant-page_reviews');
@@ -120,9 +126,13 @@ class RestaurantPage {
         `;
 
         const reviews = new Reviews(this.restaurantId, restaurantPageReviews);
-
-
         parentEl.appendChild(restaurantPageReviews);
+
+        const restaurantReviewsButton = document.createElement('div');
+        restaurantReviewsButton.classList.add('restaurant-reviews-button');
+        restaurantPageReviews.appendChild(restaurantReviewsButton);
+
+        restaurantReviewsButton.addEventListener('click', (e) => this.toggleReviewsVisibility(e));
     }
 
     renderRestaurantBookingForm(parentEl) {
@@ -175,7 +185,6 @@ class RestaurantPage {
         parentEl.appendChild(restaurantMapWrapper);
 
         const { lat, lon } = this.restaurantInfo.geo;
-        console.log(lat, lon);
 
         const restaurantMap = L.map('map').setView([lat, lon], 15);
 
@@ -192,7 +201,6 @@ class RestaurantPage {
 
 
     renderRestaurantPage() {
-        console.log(this.restaurantInfo);
         const restaurantPage = document.createElement('div');
         restaurantPage.classList.add('restaurant-page');
 
@@ -200,8 +208,6 @@ class RestaurantPage {
 
         const restaurantPageInfo = document.createElement('div');
         restaurantPageInfo.classList.add('restaurant-page_info');
-
-
 
         this.renderRestaurantNav(restaurantPageInfo);
         this.renderRestaurantOverview(restaurantPageInfo);
@@ -214,7 +220,6 @@ class RestaurantPage {
 
         this.renderRestaurantBookingForm(restaurantPageBooking);
         this.renderRestaurantCallForm(restaurantPageBooking);
-        //this.renderRestaurantMap(restaurantPageBooking);
 
         restaurantPage.appendChild(restaurantPageInfo);
         restaurantPage.appendChild(restaurantPageBooking);

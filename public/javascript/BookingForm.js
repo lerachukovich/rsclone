@@ -47,16 +47,7 @@ class BookingForm {
         <button class="restaurant-page_menu_button" type="submit" data-key="find-table">${dictionary[this.currentLanguage]['find-table']}</button>
         `;
 
-        // bookingForm.addEventListener('submit', (e) => {
-        //     e.preventDefault();
-        //     const time = document.querySelector('#time').value;
-        //     const date = document.querySelector('#date').value;
-        //     console.log(date, time, typeof date, typeof time);
-        // });
-
         return bookingForm;
-
-
 
     }
 }

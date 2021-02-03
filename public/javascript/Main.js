@@ -18,7 +18,7 @@ class Main {
 
         const randomPage = getRandomPage(1, 20);
 
-        this.defaultUrl = `https://api.documenu.com/v2/restaurants/search/fields?fullmenu=true&key=ceac53a25a3e0c72db4a54003c38c2b7&page=${randomPage}`;
+        this.defaultUrl = `https://api.documenu.com/v2/restaurants/search/fields?fullmenu=true&key=035175c2658ba08d8c62792f71cc65b3&page=${randomPage}`;
     }
 
     addLogoutBtnToFooter() {
@@ -100,7 +100,7 @@ class Main {
 
             if(dashboardBlock.id && dashboardBlock.id === 'edit') {
                 this.clearMainPage();
-                const editProfilePage = new EditProfilePage(this.appMain, this.userName, this.userMail);
+                const editProfilePage = new EditProfilePage(this.appMain, this.userName);
                 editProfilePage.renderEditProfilePage();
             }
         }
@@ -113,9 +113,25 @@ class Main {
 
             if(e.target.dataset.key === 'your-profile') {
                 this.clearMainPage();
-                const editProfilePage = new EditProfilePage(this.appMain, this.userName, this.userMail);
+                const editProfilePage = new EditProfilePage(this.appMain, this.userName);
                 editProfilePage.renderEditProfilePage();
             }
+        }
+
+    }
+
+    handleKeyEvents(e) {
+        if(e.code === 'KeyR' && (e.ctrlKey || e.metaKey)) {
+            e.preventDefault();
+            this.clearMainPage();
+            this.renderDefaultMainPage(this.defaultUrl);
+        }
+
+        if(e.code === 'KeyP' && (e.ctrlKey || e.metaKey)) {
+            e.preventDefault();
+            this.clearMainPage();
+            const profilePage = new EditProfilePage(this.appMain, this.userName);
+            profilePage.renderEditProfilePage();
         }
 
     }
@@ -136,8 +152,9 @@ class Main {
 
         this.addLogoutBtnToFooter();
 
+        document.addEventListener('keydown', (e) => this.handleKeyEvents(e));
+
         this.userName = document.querySelector('.user-name').textContent;
-        this.userMail = document.querySelector('.user-email').textContent;
 
     }
 }

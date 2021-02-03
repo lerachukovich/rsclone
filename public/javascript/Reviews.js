@@ -21,15 +21,11 @@ class Reviews {
         })
         .then((response) => response.json())
         .then((result) => {
-            console.log(result);
             this.renderReviews(result.user_reviews);
-            
         });
     }
 
     renderReviews(reviewsData) {
-        console.log(reviewsData);
-
         const reviewsWrapper = document.createElement('div');
         reviewsWrapper.classList.add('reviews-wrapper');
 

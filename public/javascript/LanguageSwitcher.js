@@ -41,6 +41,8 @@ class LanguageSwitcher {
 
         languageSwitcher.addEventListener('click', this.changeLanguage);
 
+
+
         return languageSwitcher;
     }
 

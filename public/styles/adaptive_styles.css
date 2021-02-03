@@ -1,0 +1,414 @@
+@media screen and (max-width: 1200px) {
+    .edit-page_content {
+        width: 65%;
+    }
+
+    .restaurant-page_info {
+        width: 53%;
+    }
+
+    .bar-progress {
+        height: 25px;
+    }
+
+    .restaurant-page {
+        padding: 150px 10px 20px 10px;
+        background: url(../assets/restaurants-images/1.jpg) no-repeat right 0px top -200px / contain;
+    }
+
+    .restaurant-page_booking {
+        width: 45%;
+    }
+
+    .review-item-wrapper div:first-child{
+        margin-right: 10px;
+    }
+
+    .restaurant-page_overview_name {
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    .menu_wrapper {
+        width: 80%;
+    }
+
+    .restaurant-page_nav-list {
+        padding: 0px;
+    }
+
+
+
+}
+@media screen and (max-width: 1024px) {
+    .login-form {
+        padding: 0px 20px;
+    }
+
+    .header_right-part {
+        width: 70%;
+    }
+
+    .dashboard-block_layout {
+        padding: 30px 0;
+    }
+
+    .dashboard-block:first-child .dashboard-block_layout,
+    .dashboard-block:nth-child(2) .dashboard-block_layout {
+        justify-content: flex-start;
+    }
+
+    .dashboard-block:nth-child(4) .dashboard-block_layout,
+    .dashboard-block:nth-child(3) .dashboard-block_layout {
+        justify-content: flex-end;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .edit-page_content {
+        width: 90%;
+    }
+
+    .header_right-part {
+        width: 80%;
+        justify-content: space-around;
+    }
+
+    .search-form_input {
+        width: 165px;
+        padding: 10px 0px 10px 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .app_header {
+        flex-direction: column;
+        height: fit-content;
+        padding: 10px;
+    }
+
+    .search-form {
+        justify-content: flex-start;
+        width: 85%;
+    }
+
+    .search-form_input_wrapper {
+        margin-right: 5px;
+    }
+
+    .header_right-part {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .welcome_page_left-side {
+        width: 35%;
+    }
+
+    .welcome_page_right-side {
+        width: 65%;
+    }
+
+    .dashboard-page {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .dashboard-block {
+        width: 100%;
+    }
+
+    .dashboard-central-block {
+        display: none;
+    }
+
+    .dashboard-subtitle {
+        width: 90%;
+    }
+
+    .dashboard-block_layout {
+        padding: 20px 0;
+    }
+
+    .edit-page_content {
+        width: 95%;
+        padding: 20px 10px;
+    }
+
+    .dashboard-block:first-child .dashboard-block_layout,
+    .dashboard-block:nth-child(2) .dashboard-block_layout,
+    .dashboard-block:nth-child(4) .dashboard-block_layout,
+    .dashboard-block:nth-child(3) .dashboard-block_layout  {
+        justify-content: center;
+    }
+
+    .login_page .welcome_page_button {
+        margin: 20px 0;
+    }
+
+    .restaurant-page_title {
+        font-size: 18px;
+    }
+
+    .restaurant-page {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+        background: url(../assets/restaurants-images/1.jpg) no-repeat right 0px top 0px / contain;
+    }
+
+    .restaurant-page_info, 
+    .restaurant-page_booking {
+        width: 80%;
+    }
+
+    .menu_wrapper {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 580px) {
+
+    .edit-page_header {
+        flex-wrap: wrap;
+    }
+
+    .edit-page_header div:first-child {
+        width: 100%;
+    }
+
+    .bar-wrapper {
+        width: 160px;
+    }
+    
+    .welcome_page_list li {
+        margin-bottom: 5px;
+    }
+
+    .welcome_page_list {
+        width: 90%;
+        padding-left: 10px;
+    }
+
+    .welcome_page_list li span {
+        font-size: 14px;
+
+    }
+
+    .welcome_page_list li span:first-child {
+        font-size: 18px;
+    }
+
+    .app_main .col-md-6.m-auto {
+        width: 80% !important;
+    }
+
+    .login-form_input {
+        width: 200px;
+    }
+
+    .welcome_page_button {
+        margin: 20px auto 0;
+    }
+
+    .welcome_page_list {
+        list-style: none;
+    }
+
+    .login-form_header {
+        font-size: 22px;
+    }
+
+    .welcome_page_button {
+        padding: 10px 20px;
+    }
+
+    .dashboard-block_layout {
+        padding: 20px 0;
+    }
+
+    .dashboard-title {
+        font-size: 25px;
+    }
+
+    .dashboard-subtitle {
+        font-size: 16px;
+    }
+
+    .edit-page_content {
+        width: 98%;
+    }
+
+    .restaurant-page_info, 
+    .restaurant-page_booking {
+        width: 95%;
+    }
+
+    .footer_img {
+        height: 20px;
+    }
+
+    .footer_info span {
+    font-size: 16px;
+    }
+    
+    .footer_links a {
+    color: black;
+    font-size: 14px;
+    }
+
+    .app_footer {
+        flex-wrap: wrap;
+        height: fit-content;
+    }
+
+    .footer_info {
+        order: 1;
+        width: 100%;
+    }
+
+    .footer_info {
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin-top: 20px;
+        padding: 10px;
+        box-shadow: 0px 0px 3px black;
+    }
+}
+
+@media screen and (max-width: 540px)  {
+    .menu_button {
+        position: absolute;
+        top: 0;
+        right: 20px;
+    }
+
+    .search-form {
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 10px;
+        box-shadow: 0px 0px 5px black;
+        padding: 10px;
+    }
+
+    .app_header {
+        align-items: flex-start;
+    }
+
+    .search-form_input {
+        width: 150px;
+        font-size: 14px;
+        padding: 10px 0px 10px 35px;
+    }
+
+
+}
+
+@media screen and (max-width: 460px) {
+    .carousel_title {
+        font-size: 20px;
+    }
+
+    .search-form {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .search-form_button {
+        margin-top: 10px;
+    }
+
+    .restaurant-page_reviews {
+        height: 260px;
+    }
+
+    .app_main .col-md-6.m-auto {
+        width: 100% !important;
+    }
+
+}
+
+@media screen and (max-width: 425px) {
+
+    
+    .welcome_page {
+        flex-direction: column;
+    }
+
+    .welcome_page_left-side {
+        height: 300px;
+        width: 100%;
+    }
+
+    .welcome_page_right-side {
+        order: -1;
+        height: 500px;
+        width: 100%;
+        padding: 10px 10px;
+    }
+
+    .welcome_page_list {
+        width: 100%;
+    }
+
+    .welcome_page_button {
+        padding: 5px 20px;
+        margin: 10px auto; 
+    }
+
+    .dashboard-block_layout {
+        padding: 10px 5px;
+    }
+
+    .dashboard-title {
+        font-size: 20px;
+    }
+
+    .dashboard-subtitle {
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .edit-page_content {
+        width: 100%;
+    }
+
+    .restaurant-page_info, 
+    .restaurant-page_booking {
+        width: 98%;
+    }
+
+    .restaurant-page_nav-list li a {
+        padding: 3px;
+    }
+
+    .review-item-wrapper {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .login-form_header {
+        font-size: 18px;
+    }
+
+    .search-form_button {
+        width: 70%;
+    }
+
+    .search-form_input {
+        margin-bottom: 10px;
+        width: 100%;
+        padding: 10px 10px 10px 50px;
+    }
+
+    .edit-page {
+        padding: 20px 10px;
+    }
+
+    .restaurant-page_nav-list li a {
+        font-size: 14px;
+    }
+
+}
