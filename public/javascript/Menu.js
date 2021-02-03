@@ -26,8 +26,7 @@ class Menu{
         <ul class="menu_list menu_list_hidden">
             <li class="menu_list-item about-us" ><a data-key="about-us" href="#restaurants">${dictionary[this.currentLanguage]['about-us']}</a></li>
             <li class="menu_list-item your-profile" ><a data-key="your-profile" href="#profile">${dictionary[this.currentLanguage]['your-profile']}</a></li>
-            <li class="menu_list-item favorites" ><a href="reservations" data-key="reservations">${dictionary[this.currentLanguage]['reservations']}</a></li>
-            <li class="menu_list-item settings" ><a href="" data-key="settings">${dictionary[this.currentLanguage]['settings']}</a></li>
+            <li class="menu_list-item settings" ><a href="/dashboard" data-key="main-page">${dictionary[this.currentLanguage]['main-page']}</a></li>
         </ul>
         `;
 

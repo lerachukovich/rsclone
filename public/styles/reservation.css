@@ -3,7 +3,8 @@
     z-index: 1;
     position: absolute;
     top: 10%;
-    left: 25%;
+    left: 50%;
+    transform: translateX(-50%);
     width: 50%;
     height: 80%;
     display: flex;

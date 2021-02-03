@@ -74,8 +74,9 @@ export const dictionary = {
         'register-have-account': 'Have An Account? ',
         'register-login': 'Login',
         'no-account': 'No account? ',
-        'register-account': 'Register',
-        'reservations': 'Reservations'
+        'register': 'Register',
+        'reservations': 'Reservations',
+        'main-page': 'Main page'
     },
 
     'ru': {
@@ -148,7 +149,7 @@ export const dictionary = {
         "check-reservations": 'Посмотреть Ваши бронирования',
         "check-reservations-descr": "Контролируйте и управляйте Вашими текущими бронированиями",
         'log-out': 'Выйти из приложения ',
-        'log-out-descr': 'Выходя из приложения Вы будете перенаправлены на страницу Регистрации',
+        'log-out-descr': 'Выходя из приложения Вы будете перенаправлены на страницу Авторизации',
         'welcome': 'Добро пожаловать,',
         'what-to-do': 'Что бы Вы хотели сделать?',
         'register-name': 'Имя',
@@ -159,7 +160,8 @@ export const dictionary = {
         'register-have-account': 'Уже есть аккаунт? ',
         'register-login': 'Войти',
         'no-account': 'Нет аккаунта? ',
-        'register-account': 'Зарегистрироваться',
-        'reservations': 'Бронирования'
+        'register': 'Зарегистрироваться',
+        'reservations': 'Бронирования',
+        'main-page': 'Главная страница'
     }
 };

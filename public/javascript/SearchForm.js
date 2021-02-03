@@ -1,8 +1,6 @@
 import SearchFormInput from './SearchFormInput.js';
 import {statesList, cuisinesList} from './inputListsData.js';
 import { dictionary } from './dictionary.js';
-import { getRestaurantsData } from './getRestaurantsData.js';
-import RestaurantsCarousel from './RestaurantsCarousel.js';
 import {statesCodes} from './inputListsData.js';
 import Main from './Main.js';
 

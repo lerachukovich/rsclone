@@ -57,6 +57,10 @@ a:hover {
   align-items: center;
 }
 
+.header_left-part {
+  cursor: pointer;
+}
+
 .header_right-part {
   width: 60%;
 }
