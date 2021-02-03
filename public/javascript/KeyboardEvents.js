@@ -1,10 +1,10 @@
 import { dictionary } from './dictionary.js';
 
 const handleKeyboardEvents = (e) => {
-    e.preventDefault();
+    
     if(e.code === 'KeyL' && (e.ctrlKey || e.metaKey)) {
-        console.log('lang switch');
-
+        e.preventDefault();
+    
         const languages = document.querySelectorAll('[data-lang]');
         const langArray = Array.prototype.slice.call(languages);
         const notActiveLang = langArray.filter(item => !item.classList.contains('lang_active'))[0];
@@ -26,10 +26,12 @@ const handleKeyboardEvents = (e) => {
     }
 
     if(e.code === 'KeyQ' && (e.ctrlKey || e.metaKey)) {
+        e.preventDefault();
         window.location.pathname = '/users/logout';
     }
 
     if(e.code === 'KeyD' && (e.ctrlKey || e.metaKey)) {
+        e.preventDefault();
         window.location.pathname = '/dashboard';
     }
 

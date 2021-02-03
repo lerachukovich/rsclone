@@ -1,13 +1,6 @@
-//import './../styles/styles.css';
-
 import App from './App.js';
 
-
-//window.location.href = '/main';
-
-console.log('yes');
 new App().initApp();
-
 
 const handleClicks = (e) => {
     if(e.target.className === 'welcome_page_button') {
@@ -17,7 +10,6 @@ const handleClicks = (e) => {
     }
 
     if(e.target.dataset.hash === 'menu' ) {
-        console.log('container');
         const main = document.querySelector('.container');
         main.innerHTML = '';
     }

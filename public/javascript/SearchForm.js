@@ -29,7 +29,7 @@ class SearchForm{
             document.querySelector('.app_main').innerHTML = '';
 
             const stateCode = statesCodes[stateInputValue];
-            const searchUrl = `https://api.documenu.com/v2/restaurants/state/${stateCode}?key=ceac53a25a3e0c72db4a54003c38c2b7&fullmenu=true&cuisine=${cuisineInputValue}`;
+            const searchUrl = `https://api.documenu.com/v2/restaurants/state/${stateCode}?key=035175c2658ba08d8c62792f71cc65b3&fullmenu=true&cuisine=${cuisineInputValue}`;
 
             const main = new Main();
             main.renderDefaultMainPage(searchUrl);

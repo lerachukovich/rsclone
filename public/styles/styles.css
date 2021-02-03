@@ -745,3 +745,30 @@ body {
     margin-right: 0px !important;
     margin-left: 0px !important;
 }
+
+.footer_img {
+  height: 30px;
+}
+
+.footer_info {
+  display: flex;
+  align-items: flex-end;
+  width: 350px;
+  justify-content: space-between;
+}
+
+.footer_info span {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 25px;
+}
+
+.footer_links {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_links a {
+  color: black;
+  font-size: 14px;
+}

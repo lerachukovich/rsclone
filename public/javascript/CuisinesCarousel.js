@@ -26,14 +26,10 @@ class CuisinesCarousel {
                 carouselCurrentMarginLeft = parseInt(carouselCurrentMarginLeft) + carouselMainContainer.clientWidth;
                 carouselWrap.style.marginLeft = (carouselCurrentMarginLeft) + 'px';
                 
-                console.log(carouselCurrentMarginLeft, carouselHiddenWidth, currentHiddenWidth);
             } else {
                 carouselCurrentMarginLeft = 0;
                 carouselWrap.style.marginLeft = '0px';
-
-                console.log(carouselCurrentMarginLeft, carouselHiddenWidth, currentHiddenWidth);
             }
-           
         }
 
         if(e.target.className.includes('carousel_nav-next-cuisines')) {
@@ -69,9 +65,8 @@ class CuisinesCarousel {
 
         const randomStateNum = getRandomState(1, statesListValues.length);
         const randomState = statesListValues[randomStateNum];
-        console.log(randomState);
 
-        const cuisineSearchUrl = `https://api.documenu.com/v2/restaurants/state/${randomState}?key=ceac53a25a3e0c72db4a54003c38c2b7&fullmenu=true&cuisine=${cuisineName}`;
+        const cuisineSearchUrl = `https://api.documenu.com/v2/restaurants/state/${randomState}?key=035175c2658ba08d8c62792f71cc65b3&fullmenu=true&cuisine=${cuisineName}`;
 
         document.querySelector('.app_main').innerHTML = '';
         const mainPageWrap = new Main();

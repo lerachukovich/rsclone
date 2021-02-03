@@ -5,8 +5,6 @@ class RestaurantMenu {
 
     renderRestaurantMenu(menuData) {
 
-        console.log(menuData);
-
         const menuLayout = document.createElement('div');
         menuLayout.classList.add('menu_layout');
 

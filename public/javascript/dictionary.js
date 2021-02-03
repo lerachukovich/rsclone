@@ -80,7 +80,8 @@ export const dictionary = {
         'register-have-account': 'Have An Account? ',
         'register-login': 'Login',
         'no-account': 'No account? ',
-        'register-account': 'Register'
+        'register-account': 'Register',
+        'reservations': 'Reservations'
     },
 
     'ru': {
@@ -164,6 +165,7 @@ export const dictionary = {
         'register-have-account': 'Уже есть аккаунт? ',
         'register-login': 'Войти',
         'no-account': 'Нет аккаунта? ',
-        'register-account': 'Зарегистрироваться'
+        'register-account': 'Зарегистрироваться',
+        'reservations': 'Бронирования'
     }
 };

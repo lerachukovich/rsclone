@@ -3,11 +3,10 @@ import {dictionary} from './dictionary.js';
 import {statesList} from './inputListsData.js';
 
 class EditProfilePage {
-    constructor(parenElement, usersName, usersEmail) {
+    constructor(parenElement, usersName) {
         this.currentLanguage = localStorage.getItem('current-lang') || 'en';
         this.parentElement = parenElement;
         this.usersName = usersName;
-        this.usersEmail = usersEmail;
     }
 
     renderProgressBar(percent) {
@@ -86,7 +85,6 @@ class EditProfilePage {
 
         const usersInfo = JSON.parse(window.localStorage.getItem('users-info')) || defaultUsersInfo ;
         return usersInfo;
-
     }
 
     renderEditProfilePage() {
@@ -187,7 +185,8 @@ class EditProfilePage {
 
         editPageForm.appendChild(editSubmitButton);
 
-        editPageForm.addEventListener('click', (e) => {
+        editPageForm.addEventListener('submit', (e) => {
+            e.preventDefault();
             this.saveInfoToLocalStorage();
             this.countCompletePercentage();
         });

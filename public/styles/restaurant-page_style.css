@@ -22,6 +22,7 @@
   background: white;
   padding: 10px;
   position: relative;
+  overflow: hidden;
 }
 .restaurant-page_info div {
   margin-bottom: 10px;

@@ -185,7 +185,6 @@ class RestaurantPage {
         parentEl.appendChild(restaurantMapWrapper);
 
         const { lat, lon } = this.restaurantInfo.geo;
-        console.log(lat, lon);
 
         const restaurantMap = L.map('map').setView([lat, lon], 15);
 
@@ -202,7 +201,6 @@ class RestaurantPage {
 
 
     renderRestaurantPage() {
-        console.log(this.restaurantInfo);
         const restaurantPage = document.createElement('div');
         restaurantPage.classList.add('restaurant-page');
 
@@ -210,8 +208,6 @@ class RestaurantPage {
 
         const restaurantPageInfo = document.createElement('div');
         restaurantPageInfo.classList.add('restaurant-page_info');
-
-
 
         this.renderRestaurantNav(restaurantPageInfo);
         this.renderRestaurantOverview(restaurantPageInfo);
@@ -224,7 +220,6 @@ class RestaurantPage {
 
         this.renderRestaurantBookingForm(restaurantPageBooking);
         this.renderRestaurantCallForm(restaurantPageBooking);
-        //this.renderRestaurantMap(restaurantPageBooking);
 
         restaurantPage.appendChild(restaurantPageInfo);
         restaurantPage.appendChild(restaurantPageBooking);

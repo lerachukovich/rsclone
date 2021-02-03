@@ -19,8 +19,6 @@ class RestaurantCard {
         const mainAppPage = document.querySelector('.app_main');
         mainAppPage.innerHTML = '';
 
-        console.log(this);
-
         const restaurantPage = new RestaurantPage(this.cardInfo, this.imageSrc);
         const restaurantRenderedPage = restaurantPage.renderRestaurantPage();
         mainAppPage.appendChild(restaurantRenderedPage);
