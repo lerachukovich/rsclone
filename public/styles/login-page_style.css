@@ -1,5 +1,5 @@
 .login_page_right-side {
-  background: url(../assets/images/first-page-bg2.jpg) no-repeat center center / cover;
+  background: url(../assets/images/first-page-bg1.jpg) no-repeat center center / cover;
 }
 .login-form {
   width: fit-content;
@@ -17,16 +17,29 @@
 }
 .login-form_input {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 25px;
   width: 250px;
   padding: 10px;
   border: none;
   border-radius: 5px;
 }
 .login-form_button {
-  margin: 20px 0 0 0;
+  width: 100%;
+  font-family: 'Vesper Libre', sans-serif;
+  display: block;
+  padding: 15px 40px 10px;
+  margin: 30px auto 0;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background: #6b1919;
+  transition: 0.5s ease;
+  outline: none;
+  letter-spacing: 0.06rem;
 }
-p.login-register {
-  width: fit-content;
-  margin-top: 10px;
+.login-register {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
 }

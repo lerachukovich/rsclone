@@ -7,22 +7,18 @@
             <%- include ("./partials/messages.ejs") %>
             <form action="/users/register" method="POST">
                 <div class="form-group">
-                    <label for="name" data-key="register-name">Name</label>
                     <input type="name" id="name" name="name" class="form-control" placeholder="Enter Name"
                         value="<%= typeof name != 'undefined' ? name : '' %>" />
                 </div>
                 <div class="form-group">
-                    <label for="email" data-key="register-mail">Email</label>
                     <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email"
                         value="<%= typeof email != 'undefined' ? email : '' %>" />
                 </div>
                 <div class="form-group">
-                    <label for="password" data-key="register-password">Password</label>
                     <input type="password" id="password" name="password" class="form-control"
                         placeholder="Create Password" value="<%= typeof password != 'undefined' ? password : '' %>" />
                 </div>
                 <div class="form-group">
-                    <label for="password2" data-key="register-password-confirm">Confirm Password</label>
                     <input type="password" id="password2" name="password2" class="form-control"
                         placeholder="Confirm Password"
                         value="<%= typeof password2 != 'undefined' ? password2 : '' %>" />

@@ -70,6 +70,30 @@ router.post('/reservation', ensureAuthenticated, (req, res) => {
     }
 })
 
+// Delete reservations
+router.post('/delete', ensureAuthenticated, (req, res) => {
+   const _id = req.body.reservationId;
+    console.log(_id);
+
+    if (_id) {
+        Reservation.deleteOne({_id: _id})
+            .then(reservation => {
+                if (reservation.deletedCount === 0) {
+                    req.flash('error_msg', 'Sorry, this reservation is not exist');
+                    res.redirect('/dashboard');
+                } else {
+                    req.flash('success_msg', 'Your reservation successfully deleted');
+                    res.redirect('/dashboard');
+                }
+            })
+            .catch(err => console.log(err))
+    } else {
+        req.flash('error_msg', 'Sorry, reservation id was not provided');
+        res.redirect('/dashboard');
+    }
+
+})
+
 //Dashboard
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
     let errors = [];
