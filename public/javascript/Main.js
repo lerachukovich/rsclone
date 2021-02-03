@@ -120,6 +120,21 @@ class Main {
 
     }
 
+    handleKeyEvents(e) {
+        e.preventDefault();
+        if(e.code === 'KeyR' && (e.ctrlKey || e.metaKey)) {
+            this.clearMainPage();
+            this.renderDefaultMainPage(this.defaultUrl);
+        }
+
+        if(e.code === 'KeyP' && (e.ctrlKey || e.metaKey)) {
+            this.clearMainPage();
+            const profilePage = new EditProfilePage(this.appMain, this.userName, this.userMail);
+            profilePage.renderEditProfilePage();
+        }
+
+    }
+
     initMain() {
         window.addEventListener('click', (e) => this.handleClicks(e));
 
@@ -135,6 +150,8 @@ class Main {
         headerRightPart.appendChild(appMenuBtn);
 
         this.addLogoutBtnToFooter();
+
+        document.addEventListener('keydown', (e) => this.handleKeyEvents(e));
 
         this.userName = document.querySelector('.user-name').textContent;
         this.userMail = document.querySelector('.user-email').textContent;

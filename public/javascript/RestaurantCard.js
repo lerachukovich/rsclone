@@ -15,7 +15,7 @@ class RestaurantCard {
         this.imageSrc = `./assets/restaurants-images/${randomImageNum}.jpg`;
     }
 
-    renderRestaurantPage() {
+    renderRestaurantPage(){
         const mainAppPage = document.querySelector('.app_main');
         mainAppPage.innerHTML = '';
 

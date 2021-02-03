@@ -7,6 +7,7 @@
 @import  'map_styles.css';
 @import  'reviews_style.css';
 @import "reservation.css";
+@import 'adaptive_styles.css';
 .alert {
   position: absolute;
 }
@@ -28,7 +29,7 @@
 }
 
 .header_right-part {
-  width: 50%;
+  width: 60%;
 }
 
 .header_logo {
@@ -365,7 +366,7 @@
 }
 
 .search-form_input {
-  width: 100%;
+  width: 200px;
   height: 40px;
   padding: 10px 0px 10px 50px;
   border-radius: 10px 10px 0px 0px;
@@ -623,6 +624,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1000;
 }
 
 .menu_wrapper {
@@ -737,4 +739,9 @@ body {
 
 .register-form-wrapper {
   margin-bottom: 20px !important;
+}
+
+.app_main .row {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
 }

@@ -34,6 +34,13 @@ class Menu{
 
         menu.addEventListener('click', this.toggleMenuVisibility);
 
+        document.addEventListener('keydown', (e) => {
+            e.preventDefault();
+            if(e.code === 'KeyM' && (e.ctrlKey || e.metaKey)) {
+                this.toggleMenuVisibility();
+            }
+        });
+
         return menu;
     }
 

@@ -23,7 +23,6 @@ class Reviews {
         .then((result) => {
             console.log(result);
             this.renderReviews(result.user_reviews);
-            
         });
     }
 

@@ -16,31 +16,32 @@
             crossorigin="" />
       <!-- <link rel="stylesheet" href="/styles/reset.css"> -->
       <link rel="stylesheet" href="/styles/styles.css">
+      <link rel="stylesheet" href="/styles/adaptive_styles.css">
       <title>RS Clone</title>
 </head>
 
 <body>
 
-<div class="app_container">
-    <header class="app_header">
-        <div class="header_left-part">
-            <div class="header_logo"></div>
-            <div class="header_name">OpenTable</div>
-        </div>
-        <div class="header_right-part"></div>
-    </header>
+      <div class="app_container">
+            <header class="app_header">
+                  <div class="header_left-part">
+                        <div class="header_logo"></div>
+                        <div class="header_name">OpenTable</div>
+                  </div>
+                  <div class="header_right-part"></div>
+            </header>
 
-    <div class="app_main">
-        <%- body %>
-    </div>
+            <div class="app_main">
+                  <%- body %>
+            </div>
 
-    <footer class="app_footer">
-        <div class="lang_wrapper">
-            <div class="en-lang lang_active" data-lang="en"></div>
-            <div class="ru-lang" data-lang="ru"></div>
-        </div>
-    </footer>
-</div>
+            <footer class="app_footer">
+                  <div class="lang_wrapper">
+                        <div class="en-lang lang_active" data-lang="en"></div>
+                        <div class="ru-lang" data-lang="ru"></div>
+                  </div>
+            </footer>
+      </div>
 
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -50,6 +51,8 @@
       <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
             integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
             crossorigin=""></script>
+
+      <script type="module" src="/public/javascript/KeyboardEvents.js"></script>
 </body>
 
 </html>

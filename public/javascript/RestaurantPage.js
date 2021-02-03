@@ -111,6 +111,12 @@ class RestaurantPage {
         openMenuBtn.addEventListener('click', this.openMenu.bind(this));
     }
 
+    toggleReviewsVisibility(e) {
+        const reviewsWrapper = document.querySelector('.restaurant-page_reviews');
+        reviewsWrapper.classList.toggle('reviews-open');
+        e.target.classList.toggle('hide-reviews');
+    }
+
     renderRestaurantReviews(parentEl) {
         const restaurantPageReviews = document.createElement('div');
         restaurantPageReviews.classList.add('restaurant-page_reviews');
@@ -120,9 +126,13 @@ class RestaurantPage {
         `;
 
         const reviews = new Reviews(this.restaurantId, restaurantPageReviews);
-
-
         parentEl.appendChild(restaurantPageReviews);
+
+        const restaurantReviewsButton = document.createElement('div');
+        restaurantReviewsButton.classList.add('restaurant-reviews-button');
+        restaurantPageReviews.appendChild(restaurantReviewsButton);
+
+        restaurantReviewsButton.addEventListener('click', (e) => this.toggleReviewsVisibility(e));
     }
 
     renderRestaurantBookingForm(parentEl) {

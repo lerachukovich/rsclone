@@ -1,6 +1,7 @@
 .review-item-wrapper {
+    margin: 0 auto;
     display: flex;
-    width: 100%;
+    width: 90%;
     align-items: center;
     justify-content: space-between;
     box-shadow: 0px 0px 5px black;
@@ -48,4 +49,32 @@
 
 .review-author {
     font-weight: 700;
+}
+
+.restaurant-page_reviews {
+    height: 320px;
+    overflow-y: hidden;
+    position: relative;
+}
+
+.restaurant-page_reviews.reviews-open {
+    height: fit-content;
+}
+
+.restaurant-reviews-button {
+    height: 50px;
+    width: 50px;
+    box-shadow: 0px 0px 5px black;
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+    background: url(./../assets/images/down.png) no-repeat center center / contain ;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.restaurant-reviews-button.hide-reviews {
+    background: url(./../assets/images/up.png) no-repeat center center / contain;
+    transition: all 1s;
 }
